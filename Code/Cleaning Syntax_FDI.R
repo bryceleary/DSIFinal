@@ -3,18 +3,18 @@ library(tidyverse)
 library(dplyr)
 library(here)
 library(magrittr)
-here("data", "Raw_FAOSTAT-FDI-Data")
-FDI <- Raw_FAOSTAT-FDI-Data
+here("data", "Raw_FAOSTAT_FDI_Data")
+FDI <- Raw_FAOSTAT_FDI_Data
 
 #Delete Variables
 FDI <- select(FDI, -Domain, -Element, -Element.Code, -Item, -Year.Code, -Unit, -Flag, -Flag.Description, -Note)
-#Remember, the Dollar value is 2010 USD
+#Remember, the value is in 2010 USD
 
-#Rename Variables - incomplete
-FDI <- rename(FDI, flow = Value)
+#Rename Variables
+FDI <- rename(FDI, "flow" = Value)
 FDI <- rename(FDI, country = Area)
 FDI <- rename(FDI, country_code = Area.Code)
-
+r
 #Initial Analysis
 diff(range(FDI$flow, na.rm = FALSE))
 mean(FDI$flow, na.rm = FALSE)
