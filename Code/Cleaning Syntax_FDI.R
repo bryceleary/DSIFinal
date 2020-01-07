@@ -3,17 +3,17 @@ library(tidyverse)
 library(dplyr)
 library(here)
 library(magrittr)
-here("data", "Cleaning.OECD.FAO.DevAidDisburse")
-FDI <- Cleaning.OECD.FAO.DevAidDisburse
+here("data", "Raw_FAOSTAT-FDI-Data")
+FDI <- Raw_FAOSTAT-FDI-Data
 
 #Delete Variables
-FDI <- select(DevAidDisburse, -Domain, -Element, -Element.Code, -Item, -Year.Code, -Unit, -Flag, -Flag.Description, -Note)
+FDI <- select(FDI, -Domain, -Element, -Element.Code, -Item, -Year.Code, -Unit, -Flag, -Flag.Description, -Note)
+#Remember, the Dollar value is 2010 USD
 
 #Rename Variables - incomplete
-FDI <- rename(DevAidDisburse, flow = Value)
-FDI <- rename(DevAidDisburse, recipient = Recipient.Country)
-FDI <- rename(DevAidDisburse, donor = Donor)
-FDI <- rename(DevAidDisburse, donor_code = Donor.Code)
+FDI <- rename(FDI, flow = Value)
+FDI <- rename(FDI, country = Area)
+FDI <- rename(FDI, country_code = Area.Code)
 
 #Initial Analysis
 diff(range(FDI$flow, na.rm = FALSE))
