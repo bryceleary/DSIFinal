@@ -3,8 +3,7 @@ library(tidyverse)
 library(dplyr)
 library(here)
 library(magrittr)
-here("data", "Raw_FAOSTAT_FDI_Data")
-FDI <- Raw_FAOSTAT_FDI_Data
+FDI <- read.csv(here("data", "Cleaning_FAOSTAT_FDI_Data.csv"))
 
 #Delete Variables
 FDI <- select(FDI, -Domain, -Element, -Element.Code, -Item, -Year.Code, -Unit, -Flag, -Flag.Description, -Note)
