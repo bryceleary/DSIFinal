@@ -3,10 +3,10 @@ library(tidyverse)
 library(dplyr)
 library(here)
 library(magrittr)
-DevAid <- read.csv(here("DSIfinal", "data", "Cleaning_OEC_FAO_DevAid.csv"))
+DevAid <- read.csv(here("DSIfinal", "data", "Cleaning_OECDFAO_DevAid_Data.csv"))
                    
 #Delete Variables
-DevAid <- select(DevAidDisburse, -Domain, -Element, -Element.Code, -Item, -Year.Code, -Unit, -Flag, -Flag.Description, -Note)
+DevAid <- select(DevAid, -Domain, -Element, -Element.Code, -Item, -Year.Code, -Unit, -Flag, -Flag.Description, -Note)
 
 #Rename Variables - incomplete
 DevAid <- rename(DevAid, flow = Value)
