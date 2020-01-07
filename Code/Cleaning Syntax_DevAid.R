@@ -7,6 +7,7 @@ DevAid <- read.csv(here("DSIfinal", "data", "Cleaning_OECDFAO_DevAid_Data.csv"))
                    
 #Delete Variables
 DevAid <- select(DevAid, -Domain, -Element, -Element.Code, -Item, -Year.Code, -Unit, -Flag, -Flag.Description, -Note)
+#Remember the flow is in 2016 USD
 
 #Rename Variables - incomplete
 DevAid <- rename(DevAid, flow = Value)
