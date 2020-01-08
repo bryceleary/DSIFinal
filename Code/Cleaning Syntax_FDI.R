@@ -18,12 +18,12 @@ FDI <- rename(FDI, "type" = Domain.Code)
 FDI <- rename(FDI, "item" = Item)
 
 #Separate inflows and outflows
-FDI2 <- FDI %>% spread(key = item, value = flow)
+FDIfinal <- FDI %>% spread(key = item, value = flow)
 View(FDI)
-View(FDI2)
+View(FDIfinal)
 
 #Clean new variable structure and create netflow variable
 ls(FDI2)
-FDI2 <- rename(FDI2, "t_fdi_in" = "Total FDI inflows")
-FDI2 <- rename(FDI2, "t_fdi_out" = "Total FDI outflows")
-FDI2 <- FDI2 %>% mutate(fdi_net = t_fdi_in-t_fdi_out)
+FDIfinal <- rename(FDI2, "t_fdi_in" = "Total FDI inflows")
+FDIfinal <- rename(FDI2, "t_fdi_out" = "Total FDI outflows")
+FDIfinal <- FDIfinal %>% mutate(fdi_net = t_fdi_in-t_fdi_out)
