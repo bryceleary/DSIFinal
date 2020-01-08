@@ -14,6 +14,7 @@ Trade <- rename(Trade, country_code = Area.Code)
 Trade <- rename(Trade, country = Area)
 Trade <- rename(Trade, agtrade = Value)
 Trade <- rename(Trade, impexp = Element)
+Trade <- rename(Trade, year = Year)
 
 #Initial analysis by year
 year_agtrade_summ <- group_by(Trade, Year) %>% summarize("mean" = mean(agtrade, na.rm = TRUE), 
