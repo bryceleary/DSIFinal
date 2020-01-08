@@ -23,7 +23,7 @@ View(FDI)
 View(FDIfinal)
 
 #Clean new variable structure and create netflow variable
-ls(FDI2)
+ls(FDIfinal)
 FDIfinal <- rename(FDI2, "t_fdi_in" = "Total FDI inflows")
 FDIfinal <- rename(FDI2, "t_fdi_out" = "Total FDI outflows")
 FDIfinal <- FDIfinal %>% mutate(fdi_net = t_fdi_in-t_fdi_out)
