@@ -1,0 +1,21 @@
+---
+title: "DSIFinal Project"
+author: "Bryce Leary"
+date: "1/8/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Introduction
+
+```{r}
+
+```
+
+```{r}
+
+```
+
