@@ -16,10 +16,10 @@ Trade <- rename(Trade, agtrade = Value)
 Trade <- rename(Trade, impexp = Element)
 
 #Initial analysis by year
-year_agtrade_summ <- group_by(Trade, Year) %>% summarize("mean" = mean(agtrade), 
-                                                           "range" = diff(range(agtrade)), 
-                                                           "median" = median(agtrade), 
-                                                           "sd" = sd(agtrade), 
-                                                           "25th" = quantile(agtrade, 0.25), 
-                                                           "75th" = quantile(agtrade, 0.75), 
-                                                           "IQR" = IQR(agtrade))
+year_agtrade_summ <- group_by(Trade, Year) %>% summarize("mean" = mean(agtrade, na.rm = TRUE), 
+                                                           "range" = diff(range(agtrade), na.rm = TRUE), 
+                                                           "median" = median(agtrade, na.rm = TRUE), 
+                                                           "sd" = sd(agtrade, na.rm = TRUE), 
+                                                           "25th" = quantile(agtrade, 0.25, na.rm = TRUE), 
+                                                           "75th" = quantile(agtrade, 0.75, na.rm = TRUE), 
+                                                           "IQR" = IQR(agtrade, na.rm = TRUE))
