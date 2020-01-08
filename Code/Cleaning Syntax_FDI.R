@@ -9,8 +9,6 @@ FDI <- read.csv(here("data", "Cleaning_FAOSTAT_FDI_Data.csv"))
 FDI <- select(FDI, -Domain, -Element, -Element.Code, -Year.Code, -Unit, -Item.Code, -Flag, -Flag.Description, -Note)
 #Remember, the value is in 2010 USD
 
-#Delete rows with negatives
-
 #Rename Variables
 FDI <- rename(FDI, "flow" = Value)
 FDI <- rename(FDI, "country" = Area)
@@ -19,9 +17,13 @@ FDI <- rename(FDI, "year" = Year)
 FDI <- rename(FDI, "type" = Domain.Code)
 FDI <- rename(FDI, "item" = Item)
 
-#Separate command
+#Separate inflows and outflows
 FDI2 <- FDI %>% spread(key = item, value = flow)
 View(FDI)
 View(FDI2)
 
-
+#Clean new variable structure and create netflow variable
+ls(FDI2)
+FDI2 <- rename(FDI2, "t_fdi_in" = "Total FDI inflows")
+FDI2 <- rename(FDI2, "t_fdi_out" = "Total FDI outflows")
+FDI2 <- FDI2 %>% mutate(fdi_net = t_fdi_in-t_fdi_out)
