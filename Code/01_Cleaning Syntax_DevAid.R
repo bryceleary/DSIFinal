@@ -6,14 +6,16 @@ library(magrittr)
 DevAid <- read.csv(here("data", "Cleaning_OECDFAO_DevAid_Data.csv"))
                    
 #Delete Variables
-DevAid <- select(DevAid, -Domain, -Element, -Element.Code, -Item, -Year.Code, -Unit, -Flag, -Flag.Description, -Note)
+DevAid <- select(DevAid, -Domain, -Element, -Element.Code, -Item, -Year.Code, -Unit, -Flag, -Flag.Description, -Note, -Domain.Code, -Item.Code, -Purpose.Code, -Purpose)
 #Remember the flow is in 2016 USD
 
 #Rename Variables - incomplete
-DevAid <- rename(DevAid, flow = Value)
-DevAid <- rename(DevAid, recipient = Recipient.Country)
-DevAid <- rename(DevAid, donor = Donor)
+DevAid <- rename(DevAid, donorflow = Value)
+DevAid <- rename(DevAid, country = Recipient.Country)
+DevAid <- rename(DevAid, country_code = Recipient.Country.Code)
+DevAid <- rename(DevAid, type = Donor)
 DevAid <- rename(DevAid, donor_code = Donor.Code)
+DevAid <- rename(DevAid, year = Year)
 
 #Initial Analysis
 diff(range(DevAid$flow, na.rm = FALSE))
