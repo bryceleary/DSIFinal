@@ -28,13 +28,4 @@ year_adesa_summ <- group_by(Nutrition, year) %>% summarize("mean" = mean(adesa),
                                         "25th" = quantile(adesa, 0.25), 
                                         "75th" = quantile(adesa, 0.75), 
                                         "IQR" = IQR(adesa))
-
-
-#Initial Analysis (old, only as a whole)
-diff(range(Nutrition$adesa, na.rm = TRUE))
-mean(Nutrition$adesa, na.rm = TRUE)
-median(Nutrition$adesa, na.rm = TRUE)
-sd(Nutrition$adesa, na.rm = TRUE)
-quantile(Nutrition$adesa, na.rm = TRUE, 0.25)
-quantile(Nutrition$adesa, na.rm = TRUE, 0.75)
-IQR(Nutrition$adesa, na.rm = TRUE)
+ggplot(Nutrition) +geom_point(aes(year,adesa))
