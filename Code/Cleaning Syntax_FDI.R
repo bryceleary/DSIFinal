@@ -17,9 +17,18 @@ FDI <- rename(FDI, "item_code" = Item.Code)
 FDI <- rename(FDI, "type" = Domain.Code)
 FDI <- rename(FDI, "item" = Item)
 
-#Create net flow variable
-FDI <- mutate(FDI, netflow = ifelse(item == "Total FDI inflows", 1,0))
-#Help- need to add lines that recognize the same year for each country, if it says in or out in each row, and subtracts based on that information.
+#Removing those with negative inflow
+FDI <- mutate(FDI, )
+
+#Create subsets by country
+FDI.angola <- subset(FDI, subset = (country == "Angola"))
+View(FDI.angola)
+FDI.kenya <- subset(FDI, subset = (country == "Kenya"))
+
+
+
+#Simon's example code to look at subset stats
+FDI.angola$flow[FDI.angola$item == "Total FDI inflows"] %>% mean()
 
 #Initial Analysis
 diff(range(FDI$flow, na.rm = FALSE)),
