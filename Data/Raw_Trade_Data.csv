@@ -1,0 +1,161 @@
+Domain Code,Domain,Area Code,Area,Element Code,Element,Item Code,Item,Year Code,Year,Unit,Value,Flag,Flag Description
+TI,Trade Indices,7,Angola,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,1507465,Fc,Calculated data
+TI,Trade Indices,7,Angola,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,1889528,Fc,Calculated data
+TI,Trade Indices,7,Angola,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,3645,Fc,Calculated data
+TI,Trade Indices,7,Angola,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,17021,Fc,Calculated data
+TI,Trade Indices,53,Benin,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,462905,Fc,Calculated data
+TI,Trade Indices,53,Benin,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,1261639,Fc,Calculated data
+TI,Trade Indices,53,Benin,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,410140,Fc,Calculated data
+TI,Trade Indices,53,Benin,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,375145,Fc,Calculated data
+TI,Trade Indices,20,Botswana,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,243735,Fc,Calculated data
+TI,Trade Indices,20,Botswana,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,560804,Fc,Calculated data
+TI,Trade Indices,20,Botswana,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,35713,Fc,Calculated data
+TI,Trade Indices,20,Botswana,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,137981,Fc,Calculated data
+TI,Trade Indices,233,Burkina Faso,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,157438,Fc,Calculated data
+TI,Trade Indices,233,Burkina Faso,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,493138,Fc,Calculated data
+TI,Trade Indices,233,Burkina Faso,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,314727,Fc,Calculated data
+TI,Trade Indices,233,Burkina Faso,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,635170,Fc,Calculated data
+TI,Trade Indices,29,Burundi,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,72891,Fc,Calculated data
+TI,Trade Indices,29,Burundi,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,87004,Fc,Calculated data
+TI,Trade Indices,29,Burundi,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,31232,Fc,Calculated data
+TI,Trade Indices,29,Burundi,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,102526,Fc,Calculated data
+TI,Trade Indices,32,Cameroon,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,468845,Fc,Calculated data
+TI,Trade Indices,32,Cameroon,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,864098,Fc,Calculated data
+TI,Trade Indices,32,Cameroon,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,794299,Fc,Calculated data
+TI,Trade Indices,32,Cameroon,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,693239,Fc,Calculated data
+TI,Trade Indices,37,Central African Republic,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,55337,Fc,Calculated data
+TI,Trade Indices,37,Central African Republic,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,40552,Fc,Calculated data
+TI,Trade Indices,37,Central African Republic,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,52186,Fc,Calculated data
+TI,Trade Indices,37,Central African Republic,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,6532,Fc,Calculated data
+TI,Trade Indices,39,Chad,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,121428,Fc,Calculated data
+TI,Trade Indices,39,Chad,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,77707,Fc,Calculated data
+TI,Trade Indices,39,Chad,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,141733,Fc,Calculated data
+TI,Trade Indices,39,Chad,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,60182,Fc,Calculated data
+TI,Trade Indices,45,Comoros,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,54401,Fc,Calculated data
+TI,Trade Indices,45,Comoros,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,51607,Fc,Calculated data
+TI,Trade Indices,45,Comoros,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,31122,Fc,Calculated data
+TI,Trade Indices,45,Comoros,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,26022,Fc,Calculated data
+TI,Trade Indices,46,Congo,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,260404,Fc,Calculated data
+TI,Trade Indices,46,Congo,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,410137,Fc,Calculated data
+TI,Trade Indices,46,Congo,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,15196,Fc,Calculated data
+TI,Trade Indices,46,Congo,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,27700,Fc,Calculated data
+TI,Trade Indices,107,Côte d'Ivoire,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,743688,Fc,Calculated data
+TI,Trade Indices,107,Côte d'Ivoire,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,1387202,Fc,Calculated data
+TI,Trade Indices,107,Côte d'Ivoire,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,4347655,Fc,Calculated data
+TI,Trade Indices,107,Côte d'Ivoire,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,5306351,Fc,Calculated data
+TI,Trade Indices,250,Democratic Republic of the Congo,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,950232,Fc,Calculated data
+TI,Trade Indices,250,Democratic Republic of the Congo,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,472598,Fc,Calculated data
+TI,Trade Indices,250,Democratic Republic of the Congo,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,33959,Fc,Calculated data
+TI,Trade Indices,250,Democratic Republic of the Congo,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,55328,Fc,Calculated data
+TI,Trade Indices,72,Djibouti,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,201628,Fc,Calculated data
+TI,Trade Indices,72,Djibouti,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,713915,Fc,Calculated data
+TI,Trade Indices,72,Djibouti,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,16645,Fc,Calculated data
+TI,Trade Indices,72,Djibouti,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,120188,Fc,Calculated data
+TI,Trade Indices,209,Eswatini,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,219943,Fc,Calculated data
+TI,Trade Indices,209,Eswatini,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,253057,Fc,Calculated data
+TI,Trade Indices,209,Eswatini,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,447174,Fc,Calculated data
+TI,Trade Indices,209,Eswatini,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,294546,Fc,Calculated data
+TI,Trade Indices,74,Gabon,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,293381,Fc,Calculated data
+TI,Trade Indices,74,Gabon,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,375853,Fc,Calculated data
+TI,Trade Indices,74,Gabon,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,30260,Fc,Calculated data
+TI,Trade Indices,74,Gabon,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,44544,Fc,Calculated data
+TI,Trade Indices,75,Gambia,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,106268,Fc,Calculated data
+TI,Trade Indices,75,Gambia,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,228117,Fc,Calculated data
+TI,Trade Indices,75,Gambia,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,63261,Fc,Calculated data
+TI,Trade Indices,75,Gambia,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,3398,Fc,Calculated data
+TI,Trade Indices,81,Ghana,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,945532,Fc,Calculated data
+TI,Trade Indices,81,Ghana,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,1695698,Fc,Calculated data
+TI,Trade Indices,81,Ghana,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,2090109,Fc,Calculated data
+TI,Trade Indices,81,Ghana,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,1976938,Fc,Calculated data
+TI,Trade Indices,90,Guinea,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,277823,Fc,Calculated data
+TI,Trade Indices,90,Guinea,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,617947,Fc,Calculated data
+TI,Trade Indices,90,Guinea,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,65575,Fc,Calculated data
+TI,Trade Indices,90,Guinea,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,334103,Fc,Calculated data
+TI,Trade Indices,175,Guinea-Bissau,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,76928,Fc,Calculated data
+TI,Trade Indices,175,Guinea-Bissau,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,86511,Fc,Calculated data
+TI,Trade Indices,175,Guinea-Bissau,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,207354,Fc,Calculated data
+TI,Trade Indices,175,Guinea-Bissau,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,88213,Fc,Calculated data
+TI,Trade Indices,114,Kenya,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,718655,Fc,Calculated data
+TI,Trade Indices,114,Kenya,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,2413962,Fc,Calculated data
+TI,Trade Indices,114,Kenya,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,1580540,Fc,Calculated data
+TI,Trade Indices,114,Kenya,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,2028546,Fc,Calculated data
+TI,Trade Indices,122,Lesotho,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,246885,Fc,Calculated data
+TI,Trade Indices,122,Lesotho,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,173372,Fc,Calculated data
+TI,Trade Indices,122,Lesotho,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,1234,Fc,Calculated data
+TI,Trade Indices,122,Lesotho,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,97712,Fc,Calculated data
+TI,Trade Indices,129,Madagascar,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,276376,Fc,Calculated data
+TI,Trade Indices,129,Madagascar,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,456496,Fc,Calculated data
+TI,Trade Indices,129,Madagascar,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,436127,Fc,Calculated data
+TI,Trade Indices,129,Madagascar,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,303067,Fc,Calculated data
+TI,Trade Indices,130,Malawi,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,185351,Fc,Calculated data
+TI,Trade Indices,130,Malawi,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,176773,Fc,Calculated data
+TI,Trade Indices,130,Malawi,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,527972,Fc,Calculated data
+TI,Trade Indices,130,Malawi,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,671953,Fc,Calculated data
+TI,Trade Indices,133,Mali,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,247370,Fc,Calculated data
+TI,Trade Indices,133,Mali,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,539737,Fc,Calculated data
+TI,Trade Indices,133,Mali,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,508882,Fc,Calculated data
+TI,Trade Indices,133,Mali,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,271140,Fc,Calculated data
+TI,Trade Indices,136,Mauritania,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,187686,Fc,Calculated data
+TI,Trade Indices,136,Mauritania,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,689436,Fc,Calculated data
+TI,Trade Indices,136,Mauritania,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,6853,Fc,Calculated data
+TI,Trade Indices,136,Mauritania,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,55105,Fc,Calculated data
+TI,Trade Indices,137,Mauritius,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,604715,Fc,Calculated data
+TI,Trade Indices,137,Mauritius,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,530717,Fc,Calculated data
+TI,Trade Indices,137,Mauritius,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,424014,Fc,Calculated data
+TI,Trade Indices,137,Mauritius,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,317560,Fc,Calculated data
+TI,Trade Indices,144,Mozambique,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,763409,Fc,Calculated data
+TI,Trade Indices,144,Mozambique,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,805144,Fc,Calculated data
+TI,Trade Indices,144,Mozambique,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,247675,Fc,Calculated data
+TI,Trade Indices,144,Mozambique,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,597006,Fc,Calculated data
+TI,Trade Indices,147,Namibia,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,358359,Fc,Calculated data
+TI,Trade Indices,147,Namibia,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,445233,Fc,Calculated data
+TI,Trade Indices,147,Namibia,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,156523,Fc,Calculated data
+TI,Trade Indices,147,Namibia,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,613044,Fc,Calculated data
+TI,Trade Indices,158,Niger,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,334401,Fc,Calculated data
+TI,Trade Indices,158,Niger,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,368437,Fc,Calculated data
+TI,Trade Indices,158,Niger,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,52298,Fc,Calculated data
+TI,Trade Indices,158,Niger,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,235872,Fc,Calculated data
+TI,Trade Indices,159,Nigeria,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,3619335,Fc,Calculated data
+TI,Trade Indices,159,Nigeria,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,3781514,Fc,Calculated data
+TI,Trade Indices,159,Nigeria,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,1096950,Fc,Calculated data
+TI,Trade Indices,159,Nigeria,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,793627,Fc,Calculated data
+TI,Trade Indices,184,Rwanda,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,69235,Fc,Calculated data
+TI,Trade Indices,184,Rwanda,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,290800,Fc,Calculated data
+TI,Trade Indices,184,Rwanda,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,53661,Fc,Calculated data
+TI,Trade Indices,184,Rwanda,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,156751,Fc,Calculated data
+TI,Trade Indices,193,Sao Tome and Principe,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,24052,Fc,Calculated data
+TI,Trade Indices,193,Sao Tome and Principe,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,29180,Fc,Calculated data
+TI,Trade Indices,193,Sao Tome and Principe,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,6385,Fc,Calculated data
+TI,Trade Indices,193,Sao Tome and Principe,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,6410,Fc,Calculated data
+TI,Trade Indices,195,Senegal,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,868054,Fc,Calculated data
+TI,Trade Indices,195,Senegal,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,1536007,Fc,Calculated data
+TI,Trade Indices,195,Senegal,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,232833,Fc,Calculated data
+TI,Trade Indices,195,Senegal,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,329453,Fc,Calculated data
+TI,Trade Indices,196,Seychelles,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,89565,Fc,Calculated data
+TI,Trade Indices,196,Seychelles,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,106539,Fc,Calculated data
+TI,Trade Indices,196,Seychelles,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,3580,Fc,Calculated data
+TI,Trade Indices,196,Seychelles,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,2267,Fc,Calculated data
+TI,Trade Indices,197,Sierra Leone,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,120087,Fc,Calculated data
+TI,Trade Indices,197,Sierra Leone,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,310964,Fc,Calculated data
+TI,Trade Indices,197,Sierra Leone,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,23427,Fc,Calculated data
+TI,Trade Indices,197,Sierra Leone,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,47013,Fc,Calculated data
+TI,Trade Indices,202,South Africa,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,4091343,Fc,Calculated data
+TI,Trade Indices,202,South Africa,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,4057143,Fc,Calculated data
+TI,Trade Indices,202,South Africa,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,4618443,Fc,Calculated data
+TI,Trade Indices,202,South Africa,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,5795302,Fc,Calculated data
+TI,Trade Indices,217,Togo,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,109522,Fc,Calculated data
+TI,Trade Indices,217,Togo,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,273277,Fc,Calculated data
+TI,Trade Indices,217,Togo,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,109864,Fc,Calculated data
+TI,Trade Indices,217,Togo,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,211460,Fc,Calculated data
+TI,Trade Indices,226,Uganda,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,407776,Fc,Calculated data
+TI,Trade Indices,226,Uganda,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,655525,Fc,Calculated data
+TI,Trade Indices,226,Uganda,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,306537,Fc,Calculated data
+TI,Trade Indices,226,Uganda,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,1628157,Fc,Calculated data
+TI,Trade Indices,215,United Republic of Tanzania,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,635608,Fc,Calculated data
+TI,Trade Indices,215,United Republic of Tanzania,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,479501,Fc,Calculated data
+TI,Trade Indices,215,United Republic of Tanzania,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,797177,Fc,Calculated data
+TI,Trade Indices,215,United Republic of Tanzania,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,821462,Fc,Calculated data
+TI,Trade Indices,181,Zimbabwe,64,Import Value Base Period Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,619521,Fc,Calculated data
+TI,Trade Indices,181,Zimbabwe,65,Import Value Base Period Price,1882,"Agricult.Products, Total",2017,2017,1000 $,751725,Fc,Calculated data
+TI,Trade Indices,181,Zimbabwe,94,Export Value Base Quantity,1882,"Agricult.Products, Total",2017,2017,1000 $,1338311,Fc,Calculated data
+TI,Trade Indices,181,Zimbabwe,95,Export Value Base Price,1882,"Agricult.Products, Total",2017,2017,1000 $,482768,Fc,Calculated data
