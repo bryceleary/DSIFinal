@@ -6,8 +6,16 @@ library(magrittr)
 DevAid <- read.csv(here("data", "Cleaning_OECDFAO_DevAid_Data.csv"))
                    
 #Delete Variables
-DevAid <- select(DevAid, -Domain, -Element, -Element.Code, -Item, -Year.Code, -Unit, -Flag, -Flag.Description, -Note, -Domain.Code, -Item.Code, -Purpose.Code, -Purpose)
+DevAid <- select(DevAid, -Domain, -Element, -Element.Code, -Item, -Year.Code, -Unit, -Flag, -Flag.Description, -Note, -Domain.Code, -Item.Code, -Purpose)
 #Remember the flow is in 2016 USD
+
+#Combine the different purpose
+DevAid <- DevAid %>% spread(Purpose.Code, Value)
+DevAid[is.na(DevAid)] <- 0
+DevAid <- rename(DevAid, prgm1 = "12240")
+DevAid <- rename(DevAid, prgm2 = "52010")
+DevAid <- DevAid %>% mutate(donorflow = prgm1 + prgm2)
+DevAid <- select(DevAid, -prgm1, -prgm2)
 
 #Rename Variables - incomplete
 DevAid <- rename(DevAid, donorflow = Value)
