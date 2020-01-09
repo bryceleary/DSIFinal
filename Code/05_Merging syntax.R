@@ -1,4 +1,2 @@
 #Merge code
-agriculture = merge(DevAid, FDIfinal)
-
-#agriculture = merge(agriculture, Nutrition)
+agriculture = merge(DevAid, FDIfinal, by = c("year", "country"))
