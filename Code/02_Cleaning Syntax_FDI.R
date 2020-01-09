@@ -19,7 +19,6 @@ FDI <- rename(FDI, "item" = Item)
 
 #Separate inflows and outflows
 FDIfinal <- FDI %>% spread(key = item, value = flow)
-View(FDIfinal)
 
 #Clean new variable structure and create netflow variable
 ls(FDIfinal)

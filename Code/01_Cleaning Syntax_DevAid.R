@@ -17,13 +17,17 @@ DevAid <- rename(DevAid, prgm2 = "52010")
 DevAid <- DevAid %>% mutate(donorflow = prgm1 + prgm2)
 DevAid <- select(DevAid, -prgm1, -prgm2)
 
+#Spread the donor types
+DevAid <- DevAid %>% spread(type, donorflow)
+
 #Rename Variables - incomplete
-DevAid <- rename(DevAid, donorflow = Value)
 DevAid <- rename(DevAid, country = Recipient.Country)
 DevAid <- rename(DevAid, country_code = Recipient.Country.Code)
 DevAid <- rename(DevAid, type = Donor)
 DevAid <- rename(DevAid, donor_code = Donor.Code)
 DevAid <- rename(DevAid, year = Year)
+
+
 
 #Initial Analysis
 diff(range(DevAid$flow, na.rm = FALSE))
