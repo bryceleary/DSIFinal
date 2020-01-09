@@ -9,7 +9,7 @@ Depth <- read.csv(here("data", "Cleaning_FAO_Depth_Data.csv"))
 Depth <- select(Depth, -Country.Code, -Indicator.Name, -Indicator.Code, -starts_with("X19"))
 
 #Rename variables
-Depth <- rename(Depth, country_name  = ï..Country.Name)
+Depth <- rename(Depth, country  = ï..Country.Name)
 Depth <- rename(Depth, "2000" = X2000)
 Depth <- rename(Depth, "2001" = X2001)
 Depth <- rename(Depth, "2002" = X2002)
