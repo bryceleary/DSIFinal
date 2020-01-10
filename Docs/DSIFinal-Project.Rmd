@@ -2,7 +2,9 @@
 title: "DSIFinal Project"
 author: "Bryce Leary"
 date: "1/11/2020"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -149,8 +151,8 @@ Agexport <- rename(Agexport, country = Area)
 Agexport <- rename(Agexport, export_value = Value)
 Agexport <- rename(Agexport, year = Year)
 
-#Multiply the value by 1000
-Agexport<- Agexport %>% mutate(exp_value =export_value)
+#Divide the value by 1000
+Agexport<- Agexport %>% mutate(exp_value =export_value/1000)
 
 #Delete import-value variable
 Agexport<- select(Agexport, -export_value)
@@ -167,8 +169,8 @@ Agimport <- rename(Agimport, country = Area)
 Agimport <- rename(Agimport, import_value = Value)
 Agimport <- rename(Agimport, year = Year)
 
-#Multiply the value by 1000
-Agimport <- Agimport %>% mutate(imp_value =import_value)
+#Divide the value by 1000
+Agimport <- Agimport %>% mutate(imp_value =import_value/1000 )
 
 #Delete import-value variable
 Agimport <- select(Agimport, -import_value)

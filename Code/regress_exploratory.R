@@ -43,7 +43,37 @@ summary(summaidfdiie)
 #exp_value -1.204e-03 @ .0153
 #imp_value -3.682e-04 @ 0.1334
 
+###Nonlinear Regressions###
+#glm for development aid
+summaid <- glm(depth ~ bilateral + multilateral, data = agriculture)
+summary(summaid)
+#bilateral -17.77 @ .4478
+#multilateral -71.83 @ .0491
 
+
+#glm for development aid and fdi
+summaidfdi <- glm(depth ~ bilateral + multilateral + fdi_net, data = agriculture)
+summary(summaidfdi)
+#bilateral -20.3307 @ .3369
+#multilateral -63.4383 @ .0512
+#fdi_net -0.8427 @ 1.47e-08
+
+#glm for development aid, fdi, net trade
+summaidfditr <- glm(depth ~ bilateral + multilateral + fdi_net +trade_net, data = agriculture)
+summary(summaidfditr)
+#bilateral -2.051e+1 @ .3341
+#multilateral -6.3213+01 @0.0527
+#fdi_net -8.009e-01 @1.14e-05
+#trade_net 9.147e-05 @ .6930
+
+#glm for development aid, fdi, imports, exports
+summaidfdiie <- glm(depth ~ bilateral + multilateral + fdi_net + exp_value + imp_value, data = agriculture)
+summary(summaidfdiie)
+#bilateral  -3.912e+0 @ .8551
+#multilateral -7.911e+01 @.0146
+#fdi_net -3.541e-01 @.1232
+#exp_value -1.204e-03 @ .0153
+#imp_value -3.682e-04 @ 0.1334
 
 
 ###IGNORE###
