@@ -12,6 +12,23 @@ Agexport <-read.csv(here("data", "Cleaning_FAOSTAT_Export_Data.csv"))
 Agimport <- read.csv(here("data", "Cleaning_FAOSTAT_Import_Data.csv"))
 
   
+##Clean Nutrition dataset
+#Delete Unnecessary Variables
+Nutrition <- select(Nutrition, -Domain.Code, -Domain, -Element.Code, -Element, -Item.Code, -Item, -Unit, -Flag, -Flag.Description, -Note)
+
+#Rename variables
+Nutrition <- rename(Nutrition, country_code = Area.Code)
+Nutrition <- rename(Nutrition, country = Area)
+Nutrition <- rename(Nutrition, adesa = Value)
+Nutrition <- rename(Nutrition, year_spread = Year)
+Nutrition <- rename(Nutrition, year = Year.Code)
+
+#create year variable
+Nutrition <- Nutrition %>% separate(year, into = c("year1", "year3"), sep = 4, convert = TRUE)
+Nutrition <- mutate(Nutrition, year = ((year3 + year1)/2))
+Nutrition <- Nutrition %>% mutate(year1=NULL, year3=NULL)
+
+
 ###Clean Depth dataset
 #Delete Unnecessary Variables
 Depth <- select(Depth, -Country.Code, -Indicator.Name, -Indicator.Code, 
@@ -85,7 +102,7 @@ DevAid <- DevAid %>% group_by(country, year) %>% summarise_all(coalesce_by_colum
 ###Clean FDI dataset
 #Delete Variables
 FDI <- select(FDI, -Domain, -Element, -Element.Code, -Year.Code, 
-              -Unit, -Item.Code, -Flag, -Flag.Description, -Note)
+              -Unit, -Item.Code, -Flag, -Flag.Description, -Note, -Domain.Code)
 
 #Rename Variables
 FDI <- FDI %>%
