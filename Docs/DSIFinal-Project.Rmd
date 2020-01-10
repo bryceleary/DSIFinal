@@ -1,7 +1,7 @@
 ---
 title: "DSIFinal Project"
 author: "Bryce Leary"
-date: "1/8/2020"
+date: "1/11/2020"
 output: pdf_document
 ---
 
