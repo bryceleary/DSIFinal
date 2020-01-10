@@ -1,22 +1,9 @@
-
-###IGNORE###
-library(MCMCpack)
-library(coda)
-library(glmnet)
 library(tidyverse)
 
-mc_adesa <- MCMClogit(depth ~ bilateral, data = agriculture)
+###GGPlots###
+ggplot(data=agriculture) + geom_point(mapping = aes(x=year, y=depth, color = country))
+ggplot(data=agriculture) + geom_point(mapping = aes(x=year, y=adesa, color = country))
 
-glm(depth ~ bilateral, data = agriculture)
-glm(depth ~ bilateral + multilateral + fdi_net, data = agriculture)
-
-glm(depth ~ bilateral, data = agriculture)
-ggplot(data=agriculture) + geom_point(mapping = aes(x=bilateral, y=depth))
-ggplot(data=agriculture) + geom_point(mapping = aes(x=year, y=bilateral))
-
-ggplot(data=agriculture) + geom_point(mapping = aes(x=country, y=depth))
-lm(depth ~ year, country_code==197, data=agriculture)
-###IGNORE###
 
 ###MCMC/Bayes linear regression
 mc_depth_full <- MCMCregress(depth ~ bilateral + multilateral + exp_value + imp_value, data = agriculture)
@@ -55,3 +42,22 @@ summary(summaidfdiie)
 #fdi_net -3.541e-01 @.1232
 #exp_value -1.204e-03 @ .0153
 #imp_value -3.682e-04 @ 0.1334
+
+
+
+
+###IGNORE###
+library(MCMCpack)
+library(coda)
+library(glmnet)
+
+mc_adesa <- MCMClogit(depth ~ bilateral, data = agriculture)
+
+glm(depth ~ bilateral, data = agriculture)
+glm(depth ~ bilateral + multilateral + fdi_net, data = agriculture)
+
+glm(depth ~ bilateral, data = agriculture)
+ggplot(data=agriculture) + geom_point(mapping = aes(x=bilateral, y=depth))
+ggplot(data=agriculture) + geom_point(mapping = aes(x=year, y=bilateral))
+lm(depth ~ year, country_code==197, data=agriculture)
+###IGNORE###
