@@ -6,9 +6,7 @@ library(magrittr)
 Import <- read.csv(here("data", "Cleaning_FAOSTAT_Import_Data.csv"))
 
 #Delete Unnecessary Variables
-Import <- select(Import, -Domain.Code, -Domain, -Element.Code, Item, -Item.Code, -Year.Code, -Unit, -Flag, -Flag.Description)
-Import <- select(Import, -Element, -Item)
-Import <- select(Import, -import_value)
+Import <- select(Import, -Element, -Item, -Domain.Code, -Domain, -Element.Code, Item, -Item.Code, -Year.Code, -Unit, -Flag, -Flag.Description)
 
 #Rename variables
 Import <- rename(Import, country_code = Area.Code)
@@ -18,6 +16,9 @@ Import <- rename(Import, year = Year)
 
 #Multiply the value by 1000
 Import <- Import %>% mutate(imp_value =import_value * 1000)
+
+#Delete import-value variable
+Import <- select(Import, -import_value)
 
 #Initial analysis by year
 year_agtrade_summ <- group_by(Trade, Year) %>% summarize("mean" = mean(agtrade, na.rm = TRUE), 
