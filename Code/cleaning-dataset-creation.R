@@ -11,7 +11,8 @@ Trade <- read.csv(here("data", "Raw_FAOSTAT_WestAfrica_Trade Data.csv"))
 
 ###Clean Depth dataset
 #Delete Unnecessary Variables
-Depth <- select(Depth, -Country.Code, -Indicator.Name, -Indicator.Code, -starts_with("X19"))
+Depth <- select(Depth, -Country.Code, -Indicator.Name, -Indicator.Code, 
+                -starts_with("X19"))
 
 #Rename variables
 Depth <- Depth %>%
@@ -42,30 +43,33 @@ Depth <- Depth %>% gather(starts_with("2"), key = "year", value = "depth")
 
 ###Clean DevAid dataset
 #Delete Variables
-DevAid <- select(DevAid, -Domain, -Element, -Element.Code, -Item, -Year.Code, -Unit, -Flag, -Flag.Description, -Note, -Domain.Code, -Item.Code, -Purpose)
-#Remember the flow is in 2016 USD
+DevAid <- select(DevAid, -Domain, -Element, -Element.Code, -Item, 
+                 -Year.Code, -Unit, -Flag, -Flag.Description, -Note, 
+                 -Domain.Code, -Item.Code, -Purpose)
 
 #Combine the different purposes
 DevAid <- DevAid %>% spread(Purpose.Code, Value)
 DevAid[is.na(DevAid)] <- 0
-DevAid <- rename(DevAid, prgm1 = "12240")
-DevAid <- rename(DevAid, prgm2 = "52010")
+DevAid <- DevAid %>%
+  rename(prgm1  = "12240",
+         prgm2 = "52010")
 DevAid <- DevAid %>% mutate(donorflow = prgm1 + prgm2)
 DevAid <- select(DevAid, -prgm1, -prgm2)
 
 #Rename Variables
-DevAid <- rename(DevAid, country = Recipient.Country)
-DevAid <- rename(DevAid, country_code = Recipient.Country.Code)
-DevAid <- rename(DevAid, donor_code = Donor.Code)
-DevAid <- rename(DevAid, year = Year)
-DevAid <- rename(DevAid, type = Donor)
+DevAid <- DevAid %>%
+  rename(country = Recipient.Country,
+         country_code = Recipient.Country.Code,
+         donor_code = Donor.Code,
+         year  = Year,
+         type = Donor)
 
 #Spread the donor types
 DevAid <- DevAid %>% spread(type, donorflow)
-DevAid <- DevAid %>% spread(type, donorflow)
-DevAid <- rename(DevAid, bilateral = "Bilateral Donors")
-DevAid <- rename(DevAid, multilateral = "Multilateral Donors")
-DevAid <- rename(DevAid, private = "Private Donors")
+DevAid <- DevAid %>%
+  rename(bilateral = "Bilateral Donors",
+         multilateral  = "Multilateral Donors",
+         private = "Private Donors")
 
 coalesce_by_column <- function(df) {
   return(coalesce(df[1], df[2]))
@@ -75,24 +79,31 @@ DevAid <- DevAid %>% group_by(country, year) %>% summarise_all(coalesce_by_colum
 
 ###Clean FDI dataset
 #Delete Variables
-FDI <- select(FDI, -Domain, -Element, -Element.Code, -Year.Code, -Unit, -Item.Code, -Flag, -Flag.Description, -Note)
-#Remember, the value is in 2010 USD
+FDI <- select(FDI, -Domain, -Element, -Element.Code, -Year.Code, 
+              -Unit, -Item.Code, -Flag, -Flag.Description, -Note)
 
 #Rename Variables
-FDI <- rename(FDI, "flow" = Value)
-FDI <- rename(FDI, "country" = Area)
-FDI <- rename(FDI, "country_code" = Area.Code)
-FDI <- rename(FDI, "year" = Year)
-FDI <- rename(FDI, "type" = Domain.Code)
-FDI <- rename(FDI, "item" = Item)
+FDI <- FDI %>%
+  rename("flow"  = Value,
+         "country" = Area,
+         "country_code" = Area.Code,
+         "year" = Year,
+         "type" = Domain.Code,
+         "item" = Item)
 
 #Separate inflows and outflows
-FDIfinal <- FDI %>% spread(key = item, value = flow)
+FDI <- FDI %>% spread(key = item, value = flow)
 
 #Clean new variable structure and create netflow variable
-FDIfinal <- rename(FDIfinal, "t_fdi_in" = "Total FDI inflows")
-FDIfinal <- rename(FDIfinal, "t_fdi_out" = "Total FDI outflows")
-FDIfinal <- FDIfinal %>% mutate(fdi_net = t_fdi_in-t_fdi_out)
+FDI <- rename(FDI, "t_fdi_in" = "Total FDI inflows")
+FDI <- rename(FDI, "t_fdi_out" = "Total FDI outflows")
+FDI <- FDI %>% mutate(fdi_net = t_fdi_in-t_fdi_out)
 
 
-###Clean Trade dataset
+###Clean Export dataset
+
+
+
+###Clean Import dataset
+
+
