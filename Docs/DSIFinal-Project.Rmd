@@ -149,8 +149,8 @@ Agexport <- rename(Agexport, country = Area)
 Agexport <- rename(Agexport, export_value = Value)
 Agexport <- rename(Agexport, year = Year)
 
-#Multiply the value by 1000
-Agexport<- Agexport %>% mutate(exp_value =export_value)
+#Divide the value by 1000
+Agexport<- Agexport %>% mutate(exp_value =export_value/1000)
 
 #Delete import-value variable
 Agexport<- select(Agexport, -export_value)
