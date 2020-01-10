@@ -1,7 +1,7 @@
 ---
 title: "DSIFinal Project"
 author: "Bryce Leary"
-date: "1/8/2020"
+date: "1/11/2020"
 output: pdf_document
 ---
 
@@ -9,7 +9,7 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r importclean}
+```{r importclean, include=FALSE}
 ###Set-up
 library(tidyverse)
 library(here)
@@ -175,8 +175,7 @@ Agimport <- select(Agimport, -import_value)
 ```
 
 
-
-```{r merge}
+```{r merge, include=FALSE}
 #Merge code
 agriculture = merge(DevAid, FDI, by = c("year", "country", "country_code"), 
                      suffixes = c("",""))
@@ -198,6 +197,10 @@ agriculture <- agriculture %>% mutate(trade_net = exp_value - imp_value)
 ```
 
 #Introduction
+
+821 million people across the world suffered from hunger in 2018 according to the United Nations. Policymakers and global leaders are committed to ending hunger, and have codified this effort through the Millenium Challenge Goals, the Sustainable Development Goals, and the UN's Zero Hunger Challenge. These policymakers and global leaders face  many challenges however, and this analysis provides an analysis of food availability in West Africa. We seek to understand how capital flows in the agricultural sector influence the availability of food in West African countries. 
+
+Our analysis finds that PUTFINDINGSHERE.
 
 ```{r}
 
