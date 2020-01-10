@@ -6,7 +6,7 @@ library(magrittr)
 Import <- read.csv(here("data", "Cleaning_FAOSTAT_Import_Data.csv"))
 
 #Delete Unnecessary Variables
-Import <- select(Import, -Element, -Item, -Domain.Code, -Domain, -Element.Code, Item, -Item.Code, -Year.Code, -Unit, -Flag, -Flag.Description)
+Import <- select(Import, -Element, -Item, -Domain.Code, -Domain, -Element.Code, -Item.Code, -Year.Code, -Unit, -Flag, -Flag.Description)
 
 #Rename variables
 Import <- rename(Import, country_code = Area.Code)
