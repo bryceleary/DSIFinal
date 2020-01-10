@@ -18,6 +18,11 @@ ggplot(data=agriculture) + geom_point(mapping = aes(x=country, y=depth))
 lm(depth ~ year, country_code==197, data=agriculture)
 ###IGNORE###
 
+###MCMC/Bayes linear regression
+mc_depth_full <- MCMCregress(depth ~ bilateral + multilateral + exp_value + imp_value, data = agriculture)
+summary(mc_depth_full)
+#https://www.rdocumentation.org/packages/MCMCpack/versions/1.4-5/topics/MCMCregress
+
 
 ###Linear Regressions###
 #lm for development aid
