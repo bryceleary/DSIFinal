@@ -38,7 +38,7 @@ Depth <- select(Depth, -Country.Code, -Indicator.Name, -Indicator.Code,
 
 #Rename variables
 Depth <- Depth %>%
-  rename(country  = ï..Country.Name,
+  rename(country  = contains("Country.Name"),
          "2000" = X2000,
          "2001" = X2001,
          "2002" = X2002,
@@ -160,6 +160,3 @@ Agimport <- Agimport %>% mutate(imp_value =import_value)
 
 #Delete import-value variable
 Agimport <- select(Agimport, -import_value)
-
-###Create net trade variable
-trade_net <- Agimport %>% mutate(trade_net = exp_value - imp_value)
