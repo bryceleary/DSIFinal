@@ -1,6 +1,6 @@
 ---
-title: "DSIFinal Project"
-author: "Bryce Leary"
+title: "Food Availability in West Africa"
+author: "Bryce Leary, Milika Robbins, Zeinabou Saidou Baraze, Carine Ayidehou"
 date: "1/11/2020"
 output:
   pdf_document: default
@@ -12,24 +12,27 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r importclean, include=FALSE}
-###Set-up
+```{r load libraries, include = FALSE}
 library(tidyverse)
 library(here)
 library(dendextend)
 library(tinytex)
+```
 
+```{r import, include = FALSE}
 
-###Data Import
+#Data Import
 Depth <- read.csv(here("data", "Cleaning_FAO_Depth_Data.csv"))
 DevAid <- read.csv(here("data", "Cleaning_OECDFAO_DevAid_Data.csv"))
 FDI <- read.csv(here("data", "Cleaning_FAOSTAT_FDI_Data.csv"))
 Nutrition <- read.csv(here("data", "Raw_Nutrition-Data.csv"))
 Agexport <-read.csv(here("data", "Cleaning_FAOSTAT_Export_Data.csv"))
 Agimport <- read.csv(here("data", "Cleaning_FAOSTAT_Import_Data.csv"))
+```
 
+```{r clean data, include = FALSE}
   
-##Clean Nutrition dataset
+#Clean Nutrition dataset
 #Delete Unnecessary Variables
 Nutrition <- select(Nutrition, -Domain.Code, -Domain, -Element.Code, -Element, 
                     -Item.Code, -Item, -Unit, -Flag, -Flag.Description, -Note)
@@ -48,7 +51,7 @@ Nutrition <- mutate(Nutrition, year = ((year3 + year1)/2))
 Nutrition <- Nutrition %>% mutate(year1=NULL, year3=NULL)
 
 
-###Clean Depth dataset
+#Clean Depth dataset
 #Delete Unnecessary Variables
 Depth <- select(Depth, -Country.Code, -Indicator.Name, -Indicator.Code, 
                 -starts_with("X19"))
@@ -85,7 +88,7 @@ Depth <- Depth %>% gather(starts_with("2"), key = "year", value = "depth")
 
 
 
-###Clean DevAid dataset
+#Clean DevAid dataset
 #Delete Variables
 DevAid <- select(DevAid, -Domain, -Element, -Element.Code, -Item, 
                  -Year.Code, -Unit, -Flag, -Flag.Description, -Note, 
@@ -122,7 +125,7 @@ coalesce_by_column <- function(df) {
 DevAid <- DevAid %>% group_by(country, year) %>% summarise_all(coalesce_by_column)
 
 
-###Clean FDI dataset
+#Clean FDI dataset
 #Delete Variables
 FDI <- select(FDI, -Domain, -Element, -Element.Code, -Year.Code, 
               -Unit, -Item.Code, -Flag, -Flag.Description, -Note, -Domain.Code)
@@ -144,7 +147,7 @@ FDI <- rename(FDI, "t_fdi_out" = "Total FDI outflows")
 FDI <- FDI %>% mutate(fdi_net = t_fdi_in-t_fdi_out)
 
 
-###Clean Export dataset
+#Clean Export dataset
 
 #Delete Unnecessary Variables
 Agexport <- select(Agexport, -Element, -Item, -Domain.Code, -Domain, 
@@ -163,7 +166,7 @@ Agexport<- Agexport %>% mutate(exp_value =export_value/1000)
 #Delete import-value variable
 Agexport<- select(Agexport, -export_value)
 
-###Clean Import dataset
+#Clean Import dataset
 #Delete Unnecessary Variables
 Agimport <- select(Agimport, -Element, -Item, -Domain.Code, -Domain, 
                    -Element.Code, -Item.Code, -Year.Code, -Unit, -Flag, 
@@ -182,9 +185,7 @@ Agimport <- Agimport %>% mutate(imp_value =import_value/1000 )
 Agimport <- select(Agimport, -import_value)
 ```
 
-
 ```{r merge, include=FALSE}
-#Merge code
 agriculture = merge(DevAid, FDI, by = c("year", "country", "country_code"), 
                      suffixes = c("",""))
 
@@ -204,11 +205,14 @@ agriculture = merge(agriculture, Agimport, by = c("year", "country", "country_co
 agriculture <- agriculture %>% mutate(trade_net = exp_value - imp_value)
 ```
 
+# Abstract
+This paper analyzes how agricultural capital flows in West Africa impact the availability of food at the country level. We examined data on food availability in West African states from 2000 to 2017 and performed a linear regression and a hierarchical agglomerative clustering. As the amount of multilateral aid flows to a country increases, those in need experience a reduction in hunger. Additionally, as a country increases its agricultural exports the nationwide availability of food increases, though it may not reach those experiencing hunger. From a policy perspective, this paper argues for a focus on multilateral aid and agricultural exports to promote food security in West Africa.
+
 # Introduction
 
 821 million people across the world suffered from hunger in 2018 according to the United Nations. Policymakers and global leaders are committed to ending hunger, and have codified this effort through the Millenium Challenge Goals, the Sustainable Development Goals, and the UN's Zero Hunger Challenge. These policymakers and global leaders face  many challenges however, and this analysis provides an analysis of food availability in West Africa. We seek to understand how capital flows in the agricultural sector influence the availability of food in West African countries. 
 
-#Collection Method
+# Data Collection Method
 We are using six sets of data which originate from the Food and Agriculture Organization of the United States (FAO). All five datasets are time series and range from 2000 to 2017. The first dataset is the aggregated data of Development Aid Disbursement (DevAid), which is arranged by bilateral, multilateral and private donors across all West African countries. The DevAid data was last updated on January 26, 2019 and was obtained by FAO through the Credit Reporting System (CRS). The DevAid data is composed of data on the amount of aid disbursed for basic nutrition and food aid and food security programs, measured in 2016 USD millions.
 
 The second dataset is the Foreign Direct Investment (FDI). which is measured in terms of 2016 US Millions of dollars. This dataset was last updated on November 11, 2019 and covers the total FDI inflow and outflows to and from developing countries in the West Africa region. This dataset was collected by the United Nations Conference on Trade and Development (UNCTAD), The International Trade Centre (INTRACEN), the Organization for Economic Co-operation and Development (OECD) and the International Monetary Fund (IMF) Balance of Payments Manual. Both the DevAid and FDI datasets are from the FAO data group of Development Flows to Agriculture.
@@ -219,8 +223,13 @@ The fourth and fifth datasets are presented as imports and exports of crops and 
 
 The sixth and last data set is the Depth of Food Deficit (Depth) and originates from the World Bank Data Development Indicators, which were sourced from the FAO's Food Security Statistics and last updated on December 4, 2019. The key indicator in this dataset is represented in kilocalories per person per day, based on the number of calories needed per day to lift the undernourished population from this category when everything else remains the same.
 
+``` {r linear regression, echo = FALSE, include = TRUE}
+#Basic linear regression
+summaidfdiie <- lm(cbind(depth,adesa) ~ bilateral + multilateral + fdi_net + exp_value + imp_value, data = agriculture)
+summary(summaidfdiie)
+```
 
-#Our analysis finds that PUTFINDINGSHERE.
+# Linear Regression Analysis
 
 Prior to formally testing our hypothesis ,we executed exploratory `ggplot`s to view the shape of our explanatory and response variables (figure placeholder). This initial view led us to consider a basic linear regression to fit our analysis and knowledge of statistical methods.
 
@@ -234,20 +243,12 @@ The same method was executed for export values and average dietary energy supply
 
 This output and graph depicts how an increase in exports reduces available food for populations experiencing hunger across the West African countries.
 
-```{r}
+```{r regression plots, echo=FALSE, include = TRUE, warning = FALSE}
 #Plot of ADESA by country over year
 ggplot(agriculture, aes(x = year, y = adesa, color = country)) + geom_line()
 
 #Plot of depth by country over year 
 ggplot(agriculture, aes(x = year, y = depth, color = country)) + geom_line()
-
-
-###Basic linear regression###
-summaidfdiie <- lm(cbind(depth,adesa) ~ bilateral + multilateral + fdi_net + exp_value + imp_value, data = agriculture)
-summary(summaidfdiie)
-
-
-###Plots of Multivariate Regression###
 
 #Multilateral on ADESA
 ma <- ggplot(agriculture, aes(x = multilateral, y = adesa)) + geom_smooth(method = "lm")
@@ -279,8 +280,6 @@ ed + theme(plot.title = element_text(hjust = 0.5)) +
 
 ```
 
-#
-
 ```{r clustering, include=FALSE}
 #Set up dataset for clustering
 agcluster <- select(agriculture, -private, -t_fdi_in, -t_fdi_out, -fdi_net, -exp_value, -imp_value, -trade_net, -country_code, -year_spread)
@@ -295,7 +294,7 @@ agcluster2010 <- agcluster %>% filter(year==2010)
 agcluster2015 <- agcluster %>% filter(year==2015)
 ```
 
-```{r dendrograms, error = FALSE, warning = FALSE, echo = FALSE}
+```{r dendrograms, include = FALSE, echo = FALSE, error = FALSE, warning = FALSE}
 clust2000 <- dist(agcluster2000, method = "euclidian")
 den2000 <- hclust(clust2000, method = "complete")
 plot(den2000, labels = c("Burkina Faso", "Ghana", "Guinea", "Mali", "Mauritania", "Niger",  "Senegal", "Sierra Leone"), main = "Clusters in 2000")
@@ -331,17 +330,17 @@ This process examined the shifts in clusters at four time markers: 2000, 2005, 2
 
 Overall, we see countries moving further apart from each other as the millennium progressed. This is represented by the maximum height value moving from `r den2000[["height"]][7]` in 2000 to `r den2015[["height"]][13]` in 2015, a change of `r den2000[["height"]][7] - den2015[["height"]][13]`. We can also examine Baker’s Gamma correlation coefficient to determine the level of similarity between two dendrograms. Due to the varying size of the dendrograms, it is only possible to compare figure 3 and figure 4. Between these we find a Baker’s Gamma correlation of  `r cor_bakers_gamma(dend3, dend4)`. This  correlation coefficient indicates a strong similarity between the two models, though they are not exactly the same. While this correlation coefficient doesn’t account for height, we also see a change in similarity between the two years of `r den2010[["height"]][13] - den2015[["height"]][13]` as Niger continues to pull away from additional countries. Thus, while we see most countries experiencing similar effects of multinational and bilateral development aid 
 
-#Caveats and additional notes regarding our study:
+# Caveats and additional notes
 
 Our study includes several caveats, which we would like to address in this section. These caveats are evaluated in terms of data collection, data cleaning, and analysis.
 
-Collection
+## Collection
 
 This data was gathered by the Food and Agriculture Organization of the United Nations (FAO). While the FAO indicates that most of its data is from a third party which often has its own data integrity standards, our team does not know the exact data collection methods and decisions made in the moment. For this reason, we acknowledge that there may be unknown sources of collection bias. To help mitigate these effects, we reviewed the codebook for each data set.
 
 Growth domestic product (GDP) is not included in this dataset. While GDP is a commonly used variable when examining country-level growth , we chose to focus on capital flows. Policymakers have several policy levers at their disposal which can impact capital flows, such as banking regulations or legislation. We included capital flows instead of GDP to focus on the relationship between policymakers and nutrition outcomes.
 
-Cleaning
+## Cleaning
 
 To clean this dataset, we kept `country` and `country_code` as the unique identification variables for each observation. This decision relies on the assumption that country would be the. main variable by which we would need to use numerical identification as fallback.
 
@@ -351,7 +350,7 @@ The USD values for the Foreign Direct Investment (FDI) dataset were adjusted fro
 
 The Crops and Livestock Import and Export (Trade) datasets included import and export values in units of thousands, while the other four datasets of this study were in units of millions. To reconcile this difference, we divided the trade values `exp_value` and `imp_export` by 1,000 so that these values would be represented in millions.
 
-Analysis
+## Analysis
 
 Our analysis includes a linear regression and cluster analysis. While we did attempt to. execute a Bayesian regression at the beginning of the study, our final study does not include this analysis. We recognize that a Bayesian regression method may have been a more robust analysis method. However, due to our levels of statistical experience and background, we executed a multivariate linear regression. To continue to increase our knowledge in statistical methods, we focused on pushing our newly gained knowledge from the course via the cluster analysis.
 
