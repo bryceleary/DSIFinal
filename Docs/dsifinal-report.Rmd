@@ -43,6 +43,8 @@ Nutrition <- rename(Nutrition, country = Area)
 Nutrition <- rename(Nutrition, adesa = Value)
 Nutrition <- rename(Nutrition, year_spread = Year)
 Nutrition <- rename(Nutrition, year = Year.Code)
+Nutrition <- Nutrition %>% mutate_if(is.factor, as.character)
+Nutrition$country[Nutrition$country == "CÃ´te d'Ivoire"] <- "Cote d'Ivoire"
 
 #create year variable
 Nutrition <- Nutrition %>% separate(year, into = c("year1", "year3"), sep = 4, 
@@ -79,13 +81,9 @@ Depth <- Depth %>%
          "2017" = X2017,
          "2018" = X2018,
          "2019" = X2019)
-Depth <- Depth %>% mutate_if(is.factor, as.character)
-Depth <- Depth %>% mutate(country = replace(country, country == "Cote d'Ivoire", NA))
-Depth <- replace_na(Depth, list(country="CÃ´te d'Ivoire"))
 
 #Combine columns
 Depth <- Depth %>% gather(starts_with("2"), key = "year", value = "depth")
-
 
 
 #Clean DevAid dataset
@@ -111,6 +109,9 @@ DevAid <- DevAid %>%
          year  = Year,
          donor = Donor)
 DevAid <- select(DevAid, -donor_code)
+DevAid <- DevAid %>% mutate_if(is.factor, as.character)
+DevAid$country[DevAid$country == "CÃ´te d'Ivoire"] <- "Cote d'Ivoire"
+
 
 #Spread the donor types
 DevAid <- DevAid %>% spread(donor, donorflow)
@@ -137,6 +138,9 @@ FDI <- FDI %>%
          "country_code" = Area.Code,
          "year" = Year,
          "item" = Item)
+FDI <- FDI %>% mutate_if(is.factor, as.character)
+FDI$country[FDI$country == "CÃ´te d'Ivoire"] <- "Cote d'Ivoire"
+
 
 #Separate inflows and outflows
 FDI <- FDI %>% spread(key = item, value = flow)
@@ -159,6 +163,9 @@ Agexport<- rename(Agexport, country_code = Area.Code)
 Agexport <- rename(Agexport, country = Area)
 Agexport <- rename(Agexport, export_value = Value)
 Agexport <- rename(Agexport, year = Year)
+Agexport <- Agexport %>% mutate_if(is.factor, as.character)
+Agexport$country[Agexport$country == "CÃ´te d'Ivoire"] <- "Cote d'Ivoire"
+
 
 #Divide the value by 1000
 Agexport<- Agexport %>% mutate(exp_value =export_value/1000)
@@ -177,6 +184,8 @@ Agimport <- rename(Agimport, country_code = Area.Code)
 Agimport <- rename(Agimport, country = Area)
 Agimport <- rename(Agimport, import_value = Value)
 Agimport <- rename(Agimport, year = Year)
+Agimport <- Agimport %>% mutate_if(is.factor, as.character)
+Agimport$country[Agimport$country == "CÃ´te d'Ivoire"] <- "Cote d'Ivoire"
 
 #Divide the value by 1000
 Agimport <- Agimport %>% mutate(imp_value =import_value/1000 )
