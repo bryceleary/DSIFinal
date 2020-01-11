@@ -366,3 +366,8 @@ Our analysis includes a linear regression and cluster analysis. While we did att
 
 The linear regression in our study excludes a flow type, `private`.The `private` observations were omitted from the regression due to their low n-size and minimal contribution to the exploratory Bayesian regression method mentioned above.
 
+
+# Conclusion
+The results of this analysis for global leaders and policy makers is clear, multilateral aid and agricultural exports increase food availability in West Africa. More specifically, a moderate investment in multilateral aid through organizations such as the World Bank, the World Food Program, or the United Nations Development Program significantly reduces the caloric deficit, helping those most in need. In turn, the promotion of agricultural exports increases the general availability of food in a country, supporting each facet of the population. Examining the results of the agglomerative clustering model can help creating multinational food security plans which build upon complementary experiences of states, while highlight those who may be diverging from the whole and require more nuanced programming.
+
+Moving forward, additional research should focus on the nutritional status of individuals and whether gains in food availability are experienced equally across the population. It may be the case that populations are eating enough calories, but not consuming healthy numbers of micro and macro nutrients, or that gains in food availability are only experienced by specific segments of the population.
