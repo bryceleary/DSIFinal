@@ -3,9 +3,9 @@ title: "DSIFinal Project"
 author: "Bryce Leary"
 date: "1/11/2020"
 output:
-  pdf_document: default
   html_document:
     df_print: paged
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -222,9 +222,9 @@ The sixth and last data set is the Depth of Food Deficit (Depth) and originates 
 
 #Our analysis finds that PUTFINDINGSHERE.
 
-Prior to formally testing our hypothesis ,we executed exploratory `r ggplot`s to view the shape of our explanatory and response variables (figure placeholder). This initial view led us to consider a basic linear regression to fit our analysis and knowledge of statistical methods.
+Prior to formally testing our hypothesis ,we executed exploratory `ggplot`s to view the shape of our explanatory and response variables (figure placeholder). This initial view led us to consider a basic linear regression to fit our analysis and knowledge of statistical methods.
 
-This regression indicated that multilateral donor flow and export flows are the two main influences on our response variables, `r adesa` and `r depth`.
+This regression indicated that multilateral donor flow and export flows are the two main influences on our response variables, `adesa` and `depth`.
 
 To validate this finding, we also fit the regression on a line graph with smoothing features (figure placeholder).
 
@@ -343,9 +343,9 @@ Growth domestic product (GDP) is not included in this dataset. While GDP is a co
 
 Cleaning
 
-To clean this dataset, we kept `r country` and `r country_code` as the unique identification variables for each observation. This decision relies on the assumption that country would be the. main variable by which we would need to use numerical identification as fallback.
+To clean this dataset, we kept `country` and `country_code` as the unique identification variables for each observation. This decision relies on the assumption that country would be the. main variable by which we would need to use numerical identification as fallback.
 
-During the cleaning and merging process, (placeholder for Ivory coast) stood out as an observation that was inconsistently spelled across the distinct datasets. To avoid editing the excel sheet, we reconciled this inconsistent spelling by editing the `r country` column form a factor to character. Then, we replaced the existing spelling with NA. After this, we replaced NA with the alternative spelling.
+During the cleaning and merging process, (placeholder for Ivory coast) stood out as an observation that was inconsistently spelled across the distinct datasets. To avoid editing the excel sheet, we reconciled this inconsistent spelling by editing the `country` column form a factor to character. Then, we replaced the existing spelling with NA. After this, we replaced NA with the alternative spelling.
 
 The USD values for the Foreign Direct Investment (FDI) dataset were adjusted from 2010 USD values to 2016 USD values. This adjustment was made in light of the Development Aid (DevAid) dataset, which included 2016 USD values. We could have adjusted the DevAid values to 2010, but decided to use the most recent value of 2016 instead. This logic also considers that our dataset includes years from 2000 to 2017.
 
@@ -355,5 +355,5 @@ Analysis
 
 Our analysis includes a linear regression and cluster analysis. While we did attempt to. execute a Bayesian regression at the beginning of the study, our final study does not include this analysis. We recognize that a Bayesian regression method may have been a more robust analysis method. However, due to our levels of statistical experience and background, we executed a multivariate linear regression. To continue to increase our knowledge in statistical methods, we focused on pushing our newly gained knowledge from the course via the cluster analysis.
 
-The linear regression in our study excludes a flow type, `r private`.The `r private` observations were omitted from the regression due to their low n-size and minimal contribution to the exploratory Bayesian regression method mentioned above.
+The linear regression in our study excludes a flow type, `private`.The `private` observations were omitted from the regression due to their low n-size and minimal contribution to the exploratory Bayesian regression method mentioned above.
 
