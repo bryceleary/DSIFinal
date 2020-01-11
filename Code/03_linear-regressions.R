@@ -19,7 +19,7 @@ summaidfdiie <- lm(cbind(depth,adesa) ~ bilateral + multilateral + fdi_net + exp
 summary(summaidfdiie)
 
 
-###Plot of Multivariate Regression###
+###Plots of Multivariate Regression###
 
 #Multilateral on ADESA
 ma <- ggplot(agriculture, aes(x = multilateral, y = adesa)) + geom_smooth(method = "lm")
@@ -50,7 +50,7 @@ ed + theme(plot.title = element_text(hjust = 0.5)) +
        x = "Export Value (Millions in USD)", y = "Food Deficit (kCal/person/day)")
 
 
-###Lienar regression outputs for reference###
+###Linear regression outputs for reference###
 
 #bilateral  -3.912e+0 @ .8551
 #multilateral -7.911e+01 @.0146
