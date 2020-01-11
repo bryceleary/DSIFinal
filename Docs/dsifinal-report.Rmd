@@ -342,11 +342,11 @@ Overall, we see countries moving further apart from each other as the millennium
 ``` {r dendrogram plots, echo = FALSE}
 plot(den2000, labels = c("Burkina Faso", "Ghana", "Guinea", "Mali", "Mauritania", "Niger",  "Senegal", "Sierra Leone"), main = "Clusters in 2000")
 
-plot(den2005, labels = c("Burkina Faso", "CÃ´te d'Ivoire", "Ghana", "Guinea-Bissau",  "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main = "Clusters in 2005")
+plot(den2005, labels = c("Burkina Faso", "Cote d'Ivoire", "Ghana", "Guinea-Bissau",  "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main = "Clusters in 2005")
 
-plot(den2010, labels = c("Benin", "Burkina Faso", "CÃ´te d'Ivoire", "Ghana", "Guinea-Bissau", "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main = "Clusters in 2010")
+plot(den2010, labels = c("Benin", "Burkina Faso", "Cote d'Ivoire", "Ghana", "Guinea-Bissau", "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main = "Clusters in 2010")
 
-plot(den2015, labels = c("Benin", "Burkina Faso", "CÃ´te d'Ivoire", "Ghana", "Guinea-Bissau", "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main ="Clusters in 2015")
+plot(den2015, labels = c("Benin", "Burkina Faso", "Cote d'Ivoire", "Ghana", "Guinea-Bissau", "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main ="Clusters in 2015")
 ```
 
 # Caveats and additional notes
