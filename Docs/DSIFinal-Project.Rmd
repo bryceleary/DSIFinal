@@ -16,6 +16,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ###Set-up
 library(tidyverse)
 library(here)
+library(dendextend)
+library(tinytex)
 
 
 ###Data Import
@@ -228,7 +230,7 @@ agcluster2010 <- agcluster %>% filter(year==2010)
 agcluster2015 <- agcluster %>% filter(year==2015)
 ```
 
-```{r dendrograms, warning = FALSE, echo = FALSE}
+```{r dendrograms, error = FALSE, warning = FALSE, echo = FALSE}
 clust2000 <- dist(agcluster2000, method = "euclidian")
 den2000 <- hclust(clust2000, method = "complete")
 plot(den2000, labels = c("Burkina Faso", "Ghana", "Guinea", "Mali", "Mauritania", "Niger",  "Senegal", "Sierra Leone"), main = "Clusters in 2000")
@@ -245,3 +247,22 @@ clust2015 <- dist(agcluster2015, method = "euclidian")
 den2015 <- hclust(clust2015, method = "complete")
 plot(den2015, labels = c("Benin", "Burkina Faso", "CÃ´te d'Ivoire", "Ghana", "Guinea-Bissau", "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main ="Clusters in 2015")
 ```
+
+``` {r den analysis, include=FALSE}
+
+dend1 <- as.dendrogram(den2000)
+dend2 <- as.dendrogram(den2005)
+dend3 <- as.dendrogram(den2010)
+dend4 <- as.dendrogram(den2015)
+dend34list <- dendlist(dend3, dend4)
+cor.dendlist(dend34list, method = "baker")
+cor_bakers_gamma(dend3, dend4)
+```
+
+# Cluster Analysis
+To more closely examine the trends uncovered by the linear regression model, we decided to complete a cluster analysis to examine how the different states have shifted in relation to each other. This analysis could potentially reveal additional information on how capital flows have impacted similar states. We focused on bilateral and multilateral development flows, as they contained the most complete data and clustering is ineffective with significant amounts of missing data. Due to the relatively small sample size, we utilized a hierarchical agglomerative method clustering process as it can identify nuance in small-n datasets which are harder to trace through k-means clustering. 
+
+This process examined the shifts in clusters at four time markers: 2000, 2005, 2010, and 2015. These time periods were selected as they contain most of the data, avoid incomplete data, and prevent an oversaturation of the dendrogram. The results are summarized in dendrograms created through `hclust`, with the closeness between clusters summarized through the `height` variable on the Y-axis. 
+
+Overall, we see countries moving further apart from each other as the millennium progressed. This is represented by the maximum height value moving from `r den2000[["height"]][7]` in 2000 to `r den2015[["height"]][13]` in 2015, a change of `r den2000[["height"]][7] - den2015[["height"]][13]`. We can also examine Baker’s Gamma correlation coefficient to determine the level of similarity between two dendrograms. Due to the varying size of the dendrograms, it is only possible to compare figure 3 and figure 4. Between these we find a Baker’s Gamma correlation of  `r cor_bakers_gamma(dend3, dend4)`. This  correlation coefficient indicates a strong similarity between the two models, though they are not exactly the same. While this correlation coefficient doesn’t account for height, we also see a change in similarity between the two years of `r den2010[["height"]][13] - den2015[["height"]][13]` as Niger continues to pull away from additional countries. Thus, while we see most countries experiencing similar effects of multinational and bilateral development aid 
+
