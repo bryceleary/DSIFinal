@@ -35,3 +35,14 @@ den2015 <- hclust(clust2015, method = "complete")
 plot(den2015, labels = c("Benin", "Burkina Faso", "CÃ´te d'Ivoire", "Ghana", "Guinea-Bissau", 
                          "Guinea", "Liberia", "Mali", "Mauritania", 
                          "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), "Clusters in 2015")
+
+
+###
+
+dend1 <- as.dendrogram(den2000)
+dend2 <- as.dendrogram(den2005)
+dend3 <- as.dendrogram(den2010)
+dend4 <- as.dendrogram(den2015)
+dend34list <- dendlist(dend3, dend4)
+cor.dendlist(dend34list, method = "baker")
+cor_bakers_gamma(dend3, dend4)
