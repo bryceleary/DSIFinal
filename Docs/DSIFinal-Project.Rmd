@@ -49,7 +49,7 @@ Nutrition <- Nutrition %>% mutate(year1=NULL, year3=NULL)
 #Delete Unnecessary Variables
 Depth <- select(Depth, -Country.Code, -Indicator.Name, -Indicator.Code, 
                 -starts_with("X19"))
-
+ 
 #Rename variables
 Depth <- Depth %>%
   rename(country  = contains("Country.Name"),
