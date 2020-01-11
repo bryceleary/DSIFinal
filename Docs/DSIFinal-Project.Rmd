@@ -3,6 +3,7 @@ title: "DSIFinal Project"
 author: "Bryce Leary"
 date: "1/11/2020"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 ---
@@ -49,7 +50,7 @@ Nutrition <- Nutrition %>% mutate(year1=NULL, year3=NULL)
 #Delete Unnecessary Variables
 Depth <- select(Depth, -Country.Code, -Indicator.Name, -Indicator.Code, 
                 -starts_with("X19"))
-
+ 
 #Rename variables
 Depth <- Depth %>%
   rename(country  = contains("Country.Name"),
@@ -201,7 +202,7 @@ agriculture = merge(agriculture, Agimport, by = c("year", "country", "country_co
 agriculture <- agriculture %>% mutate(trade_net = exp_value - imp_value)
 ```
 
-#Introduction
+# Introduction
 
 821 million people across the world suffered from hunger in 2018 according to the United Nations. Policymakers and global leaders are committed to ending hunger, and have codified this effort through the Millenium Challenge Goals, the Sustainable Development Goals, and the UN's Zero Hunger Challenge. These policymakers and global leaders face  many challenges however, and this analysis provides an analysis of food availability in West Africa. We seek to understand how capital flows in the agricultural sector influence the availability of food in West African countries. 
 
@@ -211,7 +212,36 @@ Our analysis finds that PUTFINDINGSHERE.
 
 ```
 
-```{r}
+#
 
+```{r clustering, include=FALSE}
+#Set up dataset for clustering
+agcluster <- select(agriculture, -private, -t_fdi_in, -t_fdi_out, -fdi_net, -exp_value, -imp_value, -trade_net, -country_code, -year_spread)
+agcluster <- na.omit(agcluster)
+agcluster$adesa <- as.numeric(as.character(agcluster$adesa))
+agcluster <- agcluster %>% mutate_at(c(3,4,5,6), funs(c(scale(.))))
+
+#Create yearly interval cluster datasets
+agcluster2000 <- agcluster %>% filter(year==2000)
+agcluster2005 <- agcluster %>% filter(year==2005)
+agcluster2010 <- agcluster %>% filter(year==2010)
+agcluster2015 <- agcluster %>% filter(year==2015)
 ```
 
+```{r dendrograms, warning = FALSE, echo = FALSE}
+clust2000 <- dist(agcluster2000, method = "euclidian")
+den2000 <- hclust(clust2000, method = "complete")
+plot(den2000, labels = c("Burkina Faso", "Ghana", "Guinea", "Mali", "Mauritania", "Niger",  "Senegal", "Sierra Leone"), main = "Clusters in 2000")
+
+clust2005 <- dist(agcluster2005, method = "euclidian")
+den2005 <- hclust(clust2005, method = "complete")
+plot(den2005, labels = c("Burkina Faso", "CÃ´te d'Ivoire", "Ghana", "Guinea-Bissau",  "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main = "Clusters in 2005")
+
+clust2010 <- dist(agcluster2010, method = "euclidian")
+den2010 <- hclust(clust2010, method = "complete")
+plot(den2010, labels = c("Benin", "Burkina Faso", "CÃ´te d'Ivoire", "Ghana", "Guinea-Bissau", "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main = "Clusters in 2010")
+
+clust2015 <- dist(agcluster2015, method = "euclidian")
+den2015 <- hclust(clust2015, method = "complete")
+plot(den2015, labels = c("Benin", "Burkina Faso", "CÃ´te d'Ivoire", "Ghana", "Guinea-Bissau", "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main ="Clusters in 2015")
+```
