@@ -37,6 +37,9 @@ summary(summaidfditr)
 #lm for development aid, fdi, imports, exports
 summaidfdiie <- lm(cbind(depth,adesa) ~ bilateral + multilateral + fdi_net + exp_value + imp_value, data = agriculture)
 summary(summaidfdiie)
+ggplot(agriculture, aes(x = multilateral, y = adesa)) + geom_smooth(method = "lm")
+ggplot(agriculture, aes(x = multilateral, y = depth)) + geom_smooth(method = "lm")
+
 #bilateral  -3.912e+0 @ .8551
 #multilateral -7.911e+01 @.0146
 #fdi_net -3.541e-01 @.1232
@@ -45,7 +48,13 @@ summary(summaidfdiie)
 
 #adesa x year by country
 ggplot(agriculture, aes(x = year, y = adesa, color = country)) + geom_line()
+#ggplot(agriculture, aes(x = year, y = multilateral, color = country)) + geom_line()
 
+# adesa mean by year - S curve
+agriculture <- agriculture %>% mutate(adesa_mean = adesa)
+ggplot(agriculture, aes(x = year, y = adesa_mean)) + geom_smooth()
+
+#ggplot(agriculture, aes(x = year, y = summaidfdiie)) + geom_smooth()
 
 #old GG plot
 ggplot(data=agriculture) + geom_point(mapping = aes(x = depth, y = multilateral, color = country))
