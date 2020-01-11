@@ -225,7 +225,8 @@ The major contributing factors to the inability to meet food security range from
 In order to meet these goals, policy makers have invested into initiatives to fund the agricultural sector and engaged in partnerships with farmers and major stakeholders to bring forth comprehensive solutions to improve the global food production. This analysis will focus on the availability of good in the region of West Africa. We seek to understand how capital flows in the agricultural sector influence the availability of food in West African countries. 
  
 
-# Data Collection Method
+# Data 
+## Data Collection Method
 We are using six sets of data which originate from the Food and Agriculture Organization of the United States (FAO). All five datasets are time series and range from 2000 to 2017. The first dataset is the aggregated data of Development Aid Disbursement (DevAid), which is arranged by bilateral, multilateral and private donors across all West African countries. The DevAid data was last updated on January 26, 2019 and was obtained by FAO through the Credit Reporting System (CRS). The DevAid data is composed of data on the amount of aid disbursed for basic nutrition and food aid and food security programs, measured in 2016 USD millions.
 
 The second dataset is the Foreign Direct Investment (FDI). which is measured in terms of 2016 US Millions of dollars. This dataset was last updated on November 11, 2019 and covers the total FDI inflow and outflows to and from developing countries in the West Africa region. This dataset was collected by the United Nations Conference on Trade and Development (UNCTAD), The International Trade Centre (INTRACEN), the Organization for Economic Co-operation and Development (OECD) and the International Monetary Fund (IMF) Balance of Payments Manual. Both the DevAid and FDI datasets are from the FAO data group of Development Flows to Agriculture.
@@ -236,11 +237,9 @@ The fourth and fifth datasets are presented as imports and exports of crops and 
 
 The sixth and last data set is the Depth of Food Deficit (Depth) and originates from the World Bank Data Development Indicators, which were sourced from the FAO's Food Security Statistics and last updated on December 4, 2019. The key indicator in this dataset is represented in kilocalories per person per day, based on the number of calories needed per day to lift the undernourished population from this category when everything else remains the same.
 
-``` {r linear regression, echo = FALSE, include = TRUE}
-#Basic linear regression
-summaidfdiie <- lm(cbind(depth,adesa) ~ bilateral + multilateral + fdi_net + exp_value + imp_value, data = agriculture)
-summary(summaidfdiie)
-```
+## Data Cleaning
+As a first step we removed all duplicative unique identifiers, such as element, element code, and year code. Following this step, a consistent codebook nomenclature was created across the six datasets. For example, where `year` is a variable in all datasets, we renamed the variable to `year` for consistency. Unique values that pertain to each dataset’s core purpose were also renamed so that the variables are in lowercase format. Most importantly, the names of variables were transformed in an intuitive manner for our analysis purposes. The following codebook <link to codebook> shows the transformations for our final dataset.
+
 
 # Linear Regression Analysis
 
@@ -256,13 +255,22 @@ The same method was executed for export values and average dietary energy supply
 
 This output and graph depicts how an increase in exports reduces available food for populations experiencing hunger across the West African countries.
 
-```{r regression plots, echo=FALSE, include = TRUE, warning = FALSE}
+## Time Series Trends
+``` {r time series plots, warning = FALSE, echo = FALSE, include = TRUE}
 #Plot of ADESA by country over year
 ggplot(agriculture, aes(x = year, y = adesa, color = country)) + geom_line()
 
 #Plot of depth by country over year 
 ggplot(agriculture, aes(x = year, y = depth, color = country)) + geom_line()
+```
 
+``` {r linear regression, echo = FALSE, include = TRUE}
+#Basic linear regression
+summaidfdiie <- lm(cbind(depth,adesa) ~ bilateral + multilateral + fdi_net + exp_value + imp_value, data = agriculture)
+summary(summaidfdiie)
+```
+
+```{r regression plots, echo=FALSE, include = TRUE, warning = FALSE}
 #Multilateral on ADESA
 ma <- ggplot(agriculture, aes(x = multilateral, y = adesa)) + geom_smooth(method = "lm")
 ma + theme(plot.title = element_text(hjust = 0.5)) + 
