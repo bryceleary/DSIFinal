@@ -73,6 +73,9 @@ Depth <- Depth %>%
          "2017" = X2017,
          "2018" = X2018,
          "2019" = X2019)
+Depth <- Depth %>% mutate_if(is.factor, as.character)
+Depth <- Depth %>% mutate(country = replace(country, country == "Cote d'Ivoire", NA))
+Depth <- replace_na(Depth, list(country="CÃ´te d'Ivoire"))
 
 #Combine columns
 Depth <- Depth %>% gather(starts_with("2"), key = "year", value = "depth")
