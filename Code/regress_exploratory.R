@@ -45,7 +45,8 @@ summary(summaidfdiie)
 
 #adesa x year by country
 ggplot(agriculture, aes(x = year, y = adesa, color = country)) + geom_line()
-
+#depth x year by country
+ggplot(agriculture, aes(x = year, y = depth, color = country)) + geom_line()
 
 #old GG plot
 ggplot(data=agriculture) + geom_point(mapping = aes(x = depth, y = multilateral, color = country))
