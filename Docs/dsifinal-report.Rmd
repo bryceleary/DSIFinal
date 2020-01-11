@@ -238,7 +238,7 @@ The fourth and fifth datasets are presented as imports and exports of crops and 
 The sixth and last data set is the Depth of Food Deficit (Depth) and originates from the World Bank Data Development Indicators, which were sourced from the FAO's Food Security Statistics and last updated on December 4, 2019. The key indicator in this dataset is represented in kilocalories per person per day, based on the number of calories needed per day to lift the undernourished population from this category when everything else remains the same.
 
 ## Data Cleaning
-As a first step we removed all duplicative unique identifiers, such as element, element code, and year code. Following this step, a consistent codebook nomenclature was created across the six datasets. For example, where `year` is a variable in all datasets, we renamed the variable to `year` for consistency. Unique values that pertain to each dataset’s core purpose were also renamed so that the variables are in lowercase format. Most importantly, the names of variables were transformed in an intuitive manner for our analysis purposes. The following codebook <link to codebook> shows the transformations for our final dataset.
+As a first step we removed all duplicative unique identifiers, such as element, element code, and year code. Following this step, a consistent codebook nomenclature was created across the six datasets. For example, where `year` is a variable in all datasets, we renamed the variable to `year` for consistency. Unique values that pertain to each dataset’s core purpose were also renamed so that the variables are in lowercase format. Most importantly, the names of variables were transformed in an intuitive manner for our analysis purposes. The following codebook **[link](https://github.com/bryceleary/DSIFinal/blob/master/Docs/Project%20Components/Agriculture_Codebook.rtf)** shows the transformations for our final dataset.
 
 
 # Linear Regression
@@ -390,3 +390,14 @@ Moving forward, additional research should focus on the nutritional status of in
 
 
 # Bibliography
+Breene, Keith. “Food Security and Why It Matters.” World Economic Forum. https://www.weforum.org/agenda/2016/01/food-security-and-why-it-matters/ (January 6, 2020).
+
+Food and Agriculture Organization of the United Nations, 2019. FAOSTATS. http://www.fao.org/faostat/en/#data.
+
+Ghattas, Hala. “Food Security and Nutrition in the Context of the Global Nutrition Transition.” : 21.
+
+Maxwell, Daniel. “Food Security and Its Implications for Political Stability: A Humanitarian Perspective.”: 30.  http://www.fao.org/fileadmin/templates/cfs_high_level_forum/documents/FS-Implications-Political_Stability-Maxwell.pdf
+
+McMichael, Philip, and Mindi Schneider. 2011. “Food Security Politics and the Millennium Development Goals.” Third World Quarterly 32(1): 119–39.
+https://www.tandfonline.com/doi/full/10.1080/01436597.2011.543818
+UN. 2014. “Water and Food Security | International Decade for Action ‘Water for Life’ 2005-2015.” https://www.un.org/waterforlifedecade/food_security.shtml (January 10, 2020).
