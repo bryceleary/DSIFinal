@@ -8,13 +8,16 @@ ggplot(agriculture, aes(x = year, y = adesa, color = country)) + geom_line()
 #Plot of depth by country over year 
 ggplot(agriculture, aes(x = year, y = depth, color = country)) + geom_line()
 
+
 ###MCMC/Bayes linear regression###
 mc_depth_full <- MCMCregress(depth ~ bilateral + multilateral + exp_value + imp_value, data = agriculture)
 summary(mc_depth_full)
 
+
 ###Basic linear regression###
 summaidfdiie <- lm(cbind(depth,adesa) ~ bilateral + multilateral + fdi_net + exp_value + imp_value, data = agriculture)
 summary(summaidfdiie)
+
 
 ###outputs for reference###
 
