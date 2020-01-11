@@ -215,7 +215,7 @@ agriculture <- agriculture %>% mutate(trade_net = exp_value - imp_value)
 ```
 
 # Abstract
-This paper analyzes how agricultural capital flows in West Africa impact the availability of food at the country level. We examined data on food availability in West African states from 2000 to 2017 and performed a linear regression and a hierarchical agglomerative clustering. As the amount of multilateral aid flows to a country increases, those in need experience a reduction in hunger. Additionally, as a country increases its agricultural exports the nationwide availability of food increases, though it may not reach those experiencing hunger. From a policy perspective, this paper argues for a focus on multilateral aid and agricultural exports to promote food security in West Africa.
+This paper analyzes how agricultural capital flows in West Africa impact the availability of food at the country level. We examined data on food availability in West African states from 2000 to 2017 and performed a linear regression and a hierarchical agglomerative clustering. We found that while both FDI and agricultural exports increase food availability in a country, only multilateral aid targets the caloric deficit while only bilateral aid targets total food availability. From a policy perspective, this paper argues for a focus on agricultural FDI and exports, complemented by development aid, to promote food security in West Africa.
 
 # Introduction
 According to the World Food Summit of 1996, food security is defined as "...when all people, at all times, have physical, social and economic access to sufficient, safe and nutritious food to meet dietary needs for a productive and healthy life" (UN, 2014). Food insecurity is therefore the absence of these conditions. Over decades now, the global food security has been a major challenge for global communities to manage.  About 821 million people across the world suffered from hunger in 2018 according to the United Nations. With the world population fast growing, we would need to provide food for an estimate of 9 Billion people by the year 2050 (Breene, 2016). This means that the number of people suffering from hunger would further increase over years; as a result, we should place more urgency on resolving this issue.
@@ -241,21 +241,10 @@ The sixth and last data set is the Depth of Food Deficit (Depth) and originates 
 As a first step we removed all duplicative unique identifiers, such as element, element code, and year code. Following this step, a consistent codebook nomenclature was created across the six datasets. For example, where `year` is a variable in all datasets, we renamed the variable to `year` for consistency. Unique values that pertain to each dataset’s core purpose were also renamed so that the variables are in lowercase format. Most importantly, the names of variables were transformed in an intuitive manner for our analysis purposes. The following codebook <link to codebook> shows the transformations for our final dataset.
 
 
-# Linear Regression Analysis
+# Linear Regression
+## Initial Time Series Trends
+Prior to formally testing our hypothesis, we executed exploratory `ggplot`s to view the shape of our explanatory and response variables, as shown below. These graphs led us to consider a basic linear regression to fit our analysis, and this type of regression built upon our prior knowledge of statistical methods.
 
-Prior to formally testing our hypothesis ,we executed exploratory `ggplot`s to view the shape of our explanatory and response variables (figure placeholder). This initial view led us to consider a basic linear regression to fit our analysis and knowledge of statistical methods.
-
-This regression indicated that multilateral donor flow and export flows are the two main influences on our response variables, `adesa` and `depth`.
-
-To validate this finding, we also fit the regression on a line graph with smoothing features (figure placeholder).
-
-Together, the regression output and graph show that as the multilateral aid flow increases by approximately 79 million USD, the depth of the food deficit decreases by 1,000 calories.
-
-The same method was executed for export values and average dietary energy supply (ADESA).
-
-This output and graph depicts how an increase in exports reduces available food for populations experiencing hunger across the West African countries.
-
-## Time Series Trends
 ``` {r time series plots, warning = FALSE, echo = FALSE, include = TRUE}
 #Plot of ADESA by country over year
 ggplot(agriculture, aes(x = year, y = adesa, color = country)) + geom_line()
@@ -264,11 +253,22 @@ ggplot(agriculture, aes(x = year, y = adesa, color = country)) + geom_line()
 ggplot(agriculture, aes(x = year, y = depth, color = country)) + geom_line()
 ```
 
+# Linear Regression Results
 ``` {r linear regression, echo = FALSE, include = TRUE}
 #Basic linear regression
 summaidfdiie <- lm(cbind(depth,adesa) ~ bilateral + multilateral + fdi_net + exp_value + imp_value, data = agriculture)
 summary(summaidfdiie)
 ```
+
+When caloric deficit decreases by 1,000 per person per day, we see the multilateral donor flow increase $71,074,1000, foreign direct investment in agriculture increases $331,000 and the export value increase by $542,300. For this model, the residual 3rd and 4th quartiles reveal outliers. For example, the max in this model is 7,662.
+
+When the percentage of average food energy source availability increases, we also see the bilateral donor flow increase by $237,400, federal direct investments increase $3,311 and export value increase by $1,660. This model’s residuals do not how as many outliers as the depth model.
+
+This model leads us to suggest that in order to target those most in need, policymakers should likely focus on multilateral aid flows. However, when aiming to increase food availability at the country-level, bilateral aid is likely a more worthwhile focus.
+
+However, it is not that simple. This model produces an r-squared value of 0.2564 for caloric deficit and 0.3302 for average food energy source availability. These r-squared values show that this pattern is not entirely linear. To improve on this model, we would run a quantile regression to ensure that the model appropriately handles outliers such as Niger, as seen in Mali for the average food energy source availability and Niger for the caloric deficit.
+
+To validate this finding, we also fit the regression on a line graph with smoothing features. These graphs depict how an increase in exports, FDI, and bilateral or multilater aid increase available food for populations experiencing hunger across  West African countries.
 
 ```{r regression plots, echo=FALSE, include = TRUE, warning = FALSE}
 #Multilateral on ADESA
@@ -385,6 +385,6 @@ The linear regression in our study excludes a flow type, `private`.The `private`
 
 
 # Conclusion
-The results of this analysis for global leaders and policy makers is clear, multilateral aid and agricultural exports increase food availability in West Africa. More specifically, a moderate investment in multilateral aid through organizations such as the World Bank, the World Food Program, or the United Nations Development Program significantly reduces the caloric deficit, helping those most in need. In turn, the promotion of agricultural exports increases the general availability of food in a country, supporting each facet of the population. Examining the results of the agglomerative clustering model can help creating multinational food security plans which build upon complementary experiences of states, while highlight those who may be diverging from the whole and require more nuanced programming.
+This analysis shows that as agricultural FDI and exports increase, so does food availability in West Africa. Additionally, based on the observations in this model, a moderate investment in multilateral aid through organizations such as the World Bank, the World Food Program, or the United Nations Development Program could significantly reduce the caloric deficit. In turn, the use of bilateral aid shows an increase the general availability of food in a country, supporting each facet of the population. Examining the results of the agglomerative clustering model can help creating multinational food security plans which build upon complementary experiences of states, while highlight those who may be diverging from the whole and require more nuanced programming.
 
 Moving forward, additional research should focus on the nutritional status of individuals and whether gains in food availability are experienced equally across the population. It may be the case that populations are eating enough calories, but not consuming healthy numbers of micro and macro nutrients, or that gains in food availability are only experienced by specific segments of the population.
