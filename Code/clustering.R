@@ -4,7 +4,6 @@ library(dendextend)
 agcluster <- select(agriculture, -private, -t_fdi_in, -t_fdi_out, -fdi_net, -exp_value, -imp_value, -trade_net, -country_code, -year_spread)
 agcluster <- na.omit(agcluster)
 agcluster$adesa <- as.numeric(as.character(agcluster$adesa))
-
 agcluster <- agcluster %>% mutate_at(c(3,4,5,6), funs(c(scale(.))))
 
 #Create yearly interval cluster datasets
@@ -16,7 +15,8 @@ agcluster2015 <- agcluster %>% filter(year==2015)
 #Plot dendrograms
 clust2000 <- dist(agcluster2000, method = "euclidian")
 den2000 <- hclust(clust2000, method = "complete")
-plot(den2000, labels = c("Burkina Faso", "Ghana", "Guinea", "Mali", "Mauritania", "Niger",  "Senegal", "Sierra Leone"))
+plot(den2000, labels = c("Burkina Faso", "Ghana", "Guinea", "Mali", "Mauritania", 
+                         "Niger",  "Senegal", "Sierra Leone"))
 
 clust2005 <- dist(agcluster2005, method = "euclidian")
 den2005 <- hclust(clust2005, method = "complete")
