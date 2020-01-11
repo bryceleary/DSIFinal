@@ -301,19 +301,15 @@ agcluster2015 <- agcluster %>% filter(year==2015)
 ```{r dendrograms, include = FALSE, echo = FALSE, error = FALSE, warning = FALSE}
 clust2000 <- dist(agcluster2000, method = "euclidian")
 den2000 <- hclust(clust2000, method = "complete")
-plot(den2000, labels = c("Burkina Faso", "Ghana", "Guinea", "Mali", "Mauritania", "Niger",  "Senegal", "Sierra Leone"), main = "Clusters in 2000")
 
 clust2005 <- dist(agcluster2005, method = "euclidian")
 den2005 <- hclust(clust2005, method = "complete")
-plot(den2005, labels = c("Burkina Faso", "CÃ´te d'Ivoire", "Ghana", "Guinea-Bissau",  "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main = "Clusters in 2005")
 
 clust2010 <- dist(agcluster2010, method = "euclidian")
 den2010 <- hclust(clust2010, method = "complete")
-plot(den2010, labels = c("Benin", "Burkina Faso", "CÃ´te d'Ivoire", "Ghana", "Guinea-Bissau", "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main = "Clusters in 2010")
 
 clust2015 <- dist(agcluster2015, method = "euclidian")
 den2015 <- hclust(clust2015, method = "complete")
-plot(den2015, labels = c("Benin", "Burkina Faso", "CÃ´te d'Ivoire", "Ghana", "Guinea-Bissau", "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main ="Clusters in 2015")
 ```
 
 ``` {r den analysis, include=FALSE}
@@ -332,7 +328,17 @@ To more closely examine the trends uncovered by the linear regression model, we 
 
 This process examined the shifts in clusters at four time markers: 2000, 2005, 2010, and 2015. These time periods were selected as they contain most of the data, avoid incomplete data, and prevent an oversaturation of the dendrogram. The results are summarized in dendrograms created through `hclust`, with the closeness between clusters summarized through the `height` variable on the Y-axis. 
 
-Overall, we see countries moving further apart from each other as the millennium progressed. This is represented by the maximum height value moving from `r den2000[["height"]][7]` in 2000 to `r den2015[["height"]][13]` in 2015, a change of `r den2000[["height"]][7] - den2015[["height"]][13]`. We can also examine Baker’s Gamma correlation coefficient to determine the level of similarity between two dendrograms. Due to the varying size of the dendrograms, it is only possible to compare figure 3 and figure 4. Between these we find a Baker’s Gamma correlation of  `r cor_bakers_gamma(dend3, dend4)`. This  correlation coefficient indicates a strong similarity between the two models, though they are not exactly the same. While this correlation coefficient doesn’t account for height, we also see a change in similarity between the two years of `r den2010[["height"]][13] - den2015[["height"]][13]` as Niger continues to pull away from additional countries. Thus, while we see most countries experiencing similar effects of multinational and bilateral development aid 
+Overall, we see countries moving further apart from each other as the millennium progressed. This is represented by the maximum height value moving from `r den2000[["height"]][7]` in 2000 to `r den2015[["height"]][13]` in 2015, a change of `r den2000[["height"]][7] - den2015[["height"]][13]`. We can also examine Baker’s Gamma correlation coefficient to determine the level of similarity between two dendrograms. Due to the varying size of the dendrograms, it is only possible to compare figure 3 and figure 4. Between these we find a Baker’s Gamma correlation of  `r cor_bakers_gamma(dend3, dend4)`. This  correlation coefficient indicates a strong similarity between the two models, though they are not exactly the same. While this correlation coefficient doesn’t account for height, we also see a change in similarity between the two years of `r den2010[["height"]][13] - den2015[["height"]][13]` as Niger continues to pull away from additional countries. Thus, while we see most countries experiencing similar effects of multinational and bilateral development aid, their paths havd diverged over time. 
+
+``` {r dendrogram plots, echo = FALSE}
+plot(den2000, labels = c("Burkina Faso", "Ghana", "Guinea", "Mali", "Mauritania", "Niger",  "Senegal", "Sierra Leone"), main = "Clusters in 2000")
+
+plot(den2005, labels = c("Burkina Faso", "CÃ´te d'Ivoire", "Ghana", "Guinea-Bissau",  "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main = "Clusters in 2005")
+
+plot(den2010, labels = c("Benin", "Burkina Faso", "CÃ´te d'Ivoire", "Ghana", "Guinea-Bissau", "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main = "Clusters in 2010")
+
+plot(den2015, labels = c("Benin", "Burkina Faso", "CÃ´te d'Ivoire", "Ghana", "Guinea-Bissau", "Guinea", "Liberia", "Mali", "Mauritania", "Niger",  "Nigeria",  "Senegal", "Sierra Leone", "Togo"), main ="Clusters in 2015")
+```
 
 # Caveats and additional notes
 
