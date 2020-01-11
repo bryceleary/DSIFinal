@@ -43,10 +43,12 @@ summary(summaidfdiie)
 #exp_value -1.204e-03 @ .0153
 #imp_value -3.682e-04 @ 0.1334
 
-ggplot(data=agriculture) + geom_point(mapping = aes(x = adesa, y = multilateral, color = year))
+#adesa x year by country
+ggplot(agriculture, aes(x = year, y = adesa, color = country)) + geom_line()
+
+
+#old GG plot
 ggplot(data=agriculture) + geom_point(mapping = aes(x = depth, y = multilateral, color = country))
-
-
 
 ###IGNORE###
 library(MCMCpack)
