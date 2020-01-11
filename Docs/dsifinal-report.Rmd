@@ -272,7 +272,7 @@ To validate this finding, we also fit the regression on a line graph with smooth
 
 ```{r regression plots, echo=FALSE, include = TRUE, warning = FALSE}
 #Multilateral on ADESA
-ma <- ggplot(agriculture, aes(x = multilateral, y = adesa)) + geom_smooth(method = "lm")
+ma <- ggplot(agriculture, aes(x = multilateral, y = adesa)) + geom_point( aes(color = country)) + geom_smooth(method = "lm")
 ma + theme(plot.title = element_text(hjust = 0.5)) + 
   theme(plot.subtitle = element_text(hjust = 0.5)) + 
   labs(title = "Regression of Multilateral Flow Value on ADESA", 
@@ -280,13 +280,13 @@ ma + theme(plot.title = element_text(hjust = 0.5)) +
        x = "Multilateral Flow (Millions in USD)", y = "Average Dietary Energy Supply")
 
 #Multilateral on Depth
-md <- ggplot(agriculture, aes(x = multilateral, y = depth)) + geom_smooth(method = "lm")
+md <- ggplot(agriculture, aes(x = multilateral, y = depth)) + geom_point (aes(color = country)) + geom_smooth(method = "lm")
 md + theme(plot.title = element_text(hjust = 0.5)) + 
   labs(title = "Regression of Multilateral Donor Flow on Depth", 
        x = "Multilateral Flow (Millions in USD)", y = "Food Deficit (kCal/person/day)")
 
 #Export Value on ADESA
-ea <- ggplot(agriculture, aes(x = exp_value, y = adesa)) + geom_smooth(method = "lm")
+ea <- ggplot(agriculture, aes(x = exp_value, y = adesa)) + geom_point (aes(color = country)) + geom_smooth(method = "lm")
 ea + theme(plot.title = element_text(hjust = 0.5)) + 
   theme(plot.subtitle = element_text(hjust = 0.5)) + 
   labs(title = "Regression of Export Value on ADESA", 
@@ -294,11 +294,10 @@ ea + theme(plot.title = element_text(hjust = 0.5)) +
        x = "Export Value (Millions in USD)", y = "Average Dietary Energy Supply")
 
 #Export Value on Depth
-ed <- ggplot(agriculture, aes(x = exp_value, y = depth)) + geom_smooth(method = "lm")
+ed <- ggplot(agriculture, aes(x = exp_value, y = depth)) + geom_point (aes(color = country)) + geom_smooth(method = "lm")
 ed + theme(plot.title = element_text(hjust = 0.5)) + 
   labs(title = "Regression of Export Value on Depth", 
        x = "Export Value (Millions in USD)", y = "Food Deficit (kCal/person/day)")
-
 ```
 
 ```{r clustering, include=FALSE}
@@ -388,3 +387,6 @@ The linear regression in our study excludes a flow type, `private`.The `private`
 This analysis shows that as agricultural FDI and exports increase, so does food availability in West Africa. Additionally, based on the observations in this model, a moderate investment in multilateral aid through organizations such as the World Bank, the World Food Program, or the United Nations Development Program could significantly reduce the caloric deficit. In turn, the use of bilateral aid shows an increase the general availability of food in a country, supporting each facet of the population. Examining the results of the agglomerative clustering model can help creating multinational food security plans which build upon complementary experiences of states, while highlight those who may be diverging from the whole and require more nuanced programming.
 
 Moving forward, additional research should focus on the nutritional status of individuals and whether gains in food availability are experienced equally across the population. It may be the case that populations are eating enough calories, but not consuming healthy numbers of micro and macro nutrients, or that gains in food availability are only experienced by specific segments of the population.
+
+
+# Bibliography
